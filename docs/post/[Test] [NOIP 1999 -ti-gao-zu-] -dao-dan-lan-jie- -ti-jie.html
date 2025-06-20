@@ -98,7 +98,7 @@ $O(n^2)$ 朴素做法</h5>
 <p>对于 $i$ 前面的所有项 $j$ ，只要 $arr_{i} \leqslant arr_{j}$ ，说明 $arr_{i}$ 可以加在 $arr_{j}$ 后面，构成一个更长的不上升子数列，此时 $dp_{i}$ 有可能受到影响成为 $dp_{j} + 1$ ，也有可能因为目前的 $dp_{i}$ 已经足够大而不受影响。</p>
 <p>考虑到这是唯一会改变 $dp_{i}$ 的情况，可以据此得到状态方程：</p>
 <p>$$
-dp_{i}=\max (dp_{i},;dp_{j}+1);,\quad \text{for all} j &lt; i \text{and} arr_{i} \leqslant arr_{j}
+dp_{i}=\max (dp_{i},;dp_{j}+1);,\quad \text{for all } j &lt; i \text{ and } arr_{i} \leqslant arr_{j}
 $$</p>
 <p>根据状态方程写出实现第一个任务的代码，时间复杂度为 $O(n^2)$ ：</p>
 <div class="highlight highlight-source-c++"><pre class="notranslate"><span class="pl-k">for</span> (<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; n; dp[i++] = <span class="pl-c1">1</span>) {}	<span class="pl-c"><span class="pl-c">//</span> 设置每项初始值为 1</span>
