@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark_colorblind" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://nopthon.github.io/burger.svg"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="> [!NOTE]
+>
+> 这篇文章可能对正在学习类似于**数字逻辑与计算机组成**（Digital Logic and Computer Organization, **DL&CO**）课程的学生有一定帮助。">
+<meta property="og:title" content="Logisim 食用辅助 for DL&CO">
+<meta property="og:description" content="> [!NOTE]
+>
+> 这篇文章可能对正在学习类似于**数字逻辑与计算机组成**（Digital Logic and Computer Organization, **DL&CO**）课程的学生有一定帮助。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://Nopthon.github.io/post/Logisim%20-shi-yong-fu-zhu-%20for%20DL%26CO.html">
+<meta property="og:image" content="https://nopthon.github.io/burger.svg">
+<title>Logisim 食用辅助 for DL&CO</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}</style><style>.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}</style>
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">Logisim 食用辅助 for DL&CO</h1>
+<div class="title-right">
+    <a href="https://Nopthon.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/Nopthon/Nopthon.github.io/issues/3" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<p>这篇文章可能对正在学习类似于<strong>数字逻辑与计算机组成</strong>（Digital Logic and Computer Organization, <strong>DL&amp;CO</strong>）课程的学生有一定帮助。</p>
+<p>致敬传奇电路仿真软件 Logisim ​🫡</p>
+</div>
+<p>这里<strong>不是</strong> Logisim 使用说明书，但是这里有一些可能对使用 Logisim 有帮助的内容。</p>
+<h2>一、你选对 Logisim 版本了吗？</h2>
+<p>常见的 Logisim 有三种版本（超链接指向下载链接 / Github仓库）：</p>
+<ol>
+<li><a href="https://sourceforge.net/projects/circuit/" rel="nofollow">Logisim</a>，更新止步于 2013 年，后面的版本都是它的 Fork</li>
+<li><a href="https://sourceforge.net/projects/logisimit/" rel="nofollow">Logisim Italian Fork</a>，比较经典的 Fork，持续维护更新</li>
+<li><a href="https://github.com/logisim-evolution/logisim-evolution">Logisim-evolution</a>，比较前沿的 Fork，有较多的新功能，持续维护更新</li>
+</ol>
+<p>对于 DL&amp;CO 这门课，你应该<strong>选择第二个版本</strong>，选择正确的版本对你在本地调试有很大的帮助（这三个版本的.circ文件不完全互通）。</p>
+<h2>二、Logisim 中一些减轻工作量的tips</h2>
+<ol>
+<li>
+<p>选择一个元件，在按住 Ctrl 或 Shift 的情况下，右键可以多次点击放置多个元件。</p>
+<p>（按住 Ctrl 或 Shift 的情况下只能右键放置；松开 Ctrl 或 Shift 的情况下只能左键放置）</p>
+</li>
+<li>
+<p>选中门再按下数字键可以切换门电路的输入位宽（在放置元件时该操作也有效）；</p>
+<p>同理可以改变的有“常量”的值（不是位宽）、复用器的选择端位宽</p>
+<p>（另外，Alt+数字专门用于改变数据位宽，比如运算器、寄存器）</p>
+<p>你可以多选相同元件，然后批量修改位宽</p>
+</li>
+<li>
+<p>放置输入输出引脚后，点击 <code class="notranslate">工程-分析组合逻辑电路</code>，可以通过编辑真值表 / 输入逻辑表达式的方式自动生成组合逻辑电路</p>
+</li>
+<li>
+<p>如果需要跨文件复制电路，可以点击 <code class="notranslate">工程-加载库-Logisim库</code> 导入.circ文件，以整体封装的形式导入电路（也可以在导入后复制粘贴）</p>
+</li>
+<li>
+<p>编辑模式下鼠标中键点击某根电线（或者在戳模式下左键），会加粗与这根电线有连接的所有电线与节点，可以判断有没有发生错误连线</p>
+</li>
+<li>
+<p>选中元件按方向键可以修改方向，多选元件也有效但是电线不会相应旋转</p>
+</li>
+<li>
+<p>一次 Ctrl+D 操作可以代替一轮 Ctrl+CV 操作</p>
+</li>
+<li>
+<p>Logisim 会主动连接两个重合的端口，即使之后被分开也会用电线连接（这一操作尤其对寄存器堆实验有帮助）</p>
+</li>
+<li>
+<p>善用隧道与探针</p>
+</li>
+<li>
+<p>子电路封装界面，在拖拽图形时，按住 Shift 可以限制只能上下左右四方向移动；按住 Ctrl 可以解除吸附网格的限制</p>
+</li>
+</ol>
+<h2>三、Logisim 电路排查指南</h2>
+<p>你可以按照以下步骤排查你的电路是否有问题（<del>以及是不是你的问题</del>）：</p>
+<ol>
+<li><strong>重启一次 Logisim</strong> 可以解决 Logisim 偶发的渲染问题（尤其是出现莫名其妙的蓝线/红线时）</li>
+<li>优先排查出现蓝线/红线的地方，<strong>善用鼠标中键</strong>排查错误连线（早期很多连线问题都是不小心把两个输入端连接到了一起，这种错误通过鼠标中键可以很快排查）</li>
+<li>没有蓝线/红线但是样例测试不通过 → 针对出现错误输出的部分，对着原理图（如果有）或逻辑式排查问题，善用鼠标中键；如果是时序逻辑电路的话可能还要考虑上升沿/下降沿问题</li>
+<li>必要时可以推倒重来；在走投无路的时候可以在cslab的实践课程上寻找教程；真的走投无路的话可以尝试在某六字母网站上体会开源精神，<strong>注意可能造成的后果自负</strong></li>
+</ol>
+<h2>四、其他</h2>
+<p><del>DL&amp;CO实验交流群里佬很多，在遇到自己解决不了的问题时可以询问群u</del></p>
+<p>培养独立思考精神是最首要的！</p>
+<p>以及欢迎补充🤗</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://Nopthon.github.io">Nopthon's trashcan</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("05/29/2025"!=""){
+    var startSite=new Date("05/29/2025");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","Nopthon/Nopthon.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>
