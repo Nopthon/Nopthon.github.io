@@ -17,7 +17,7 @@
 考虑到这是唯一会改变 $dp_{i}$ 的情况，可以据此得到状态方程：
 
 $$
-dp_{i}=\max (dp_{i},\;dp_{j}+1)\;,\quad \text{for all } j < i \text{ and } arr_{i} \leqslant arr_{j}
+dp_{i}=\max (dp_{i}, dp_{j}+1) ,\quad \text{for all } j < i \text{ and } arr_{i} \leqslant arr_{j}
 $$
 
 根据状态方程写出实现第一个任务的代码，时间复杂度为 $O(n^2)$ ：
