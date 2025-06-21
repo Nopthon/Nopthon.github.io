@@ -13,8 +13,8 @@
 常见的 Logisim 有三种版本（超链接指向下载链接 / Github仓库）：
 
 1. [Logisim](https://sourceforge.net/projects/circuit/)，更新止步于 2013 年，后面的版本都是它的 Fork
-2. [Logisim Italian Fork](https://sourceforge.net/projects/logisimit/)，比较经典的 Fork，持续维护更新
-3. [Logisim-evolution](https://github.com/logisim-evolution/logisim-evolution)，比较前沿的 Fork，有较多的新功能，持续维护更新
+2. [Logisim Italian Fork](https://sourceforge.net/projects/logisimit/)，比较经典的 Fork，似乎是两年一次更新
+3. [Logisim-evolution](https://github.com/logisim-evolution/logisim-evolution)，比较前沿的 Fork，有较多的新功能，似乎在持续维护
 
 对于 DL&CO 这门课，你应该**选择第二个版本**，选择正确的版本对你在本地调试有很大的帮助（这三个版本的.circ文件不完全互通）。
 
@@ -83,9 +83,12 @@
 
 
 ## 四、其他
+```diff
 
-~~DL&CO实验交流群里佬很多，在遇到自己解决不了的问题时可以询问群u~~
+- DL&CO实验交流群里佬很多，在遇到自己解决不了的问题时可以询问群u
 
-培养独立思考精神是最首要的！
++ 培养独立思考精神是最首要的！
+
+```
 
 以及欢迎补充🤗
