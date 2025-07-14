@@ -110,7 +110,7 @@ $$</p>
 	<span class="pl-k">for</span> (<span class="pl-k">int</span> j = <span class="pl-c1">0</span>; j &lt; i; j++)	<span class="pl-c"><span class="pl-c">//</span> 对于每个 i ，遍历在它之前的所有值</span>
 		<span class="pl-k">if</span> (arr[i] &lt;= arr[j])	<span class="pl-c"><span class="pl-c">//</span> true: arr[i] 可以接在以 arr[j] 结尾的不上升子数列后面，长度 + 1</span>
 			dp[i] = max(dp[i], dp[j] + <span class="pl-c1">1</span>);	<span class="pl-c"><span class="pl-c">//</span> 长度可能改变为 dp[j] + 1 ，也可能依旧是 dp[i] 自身</span></pre></div>
-<p>对于第二个分任务，事实上可以转化为求最长（递增）子序列的长度。因为每个不上升子数列中的元素在原序列中是不上升的，所以如果我们能找到最长的递增子序列，那么每个递增子序列中的元素必须属于不同的不上升子数列。（严格证明详见 <a href="https://oi-wiki.org/math/order-theory/#dilworth-%E5%AE%9A%E7%90%86%E4%B8%8E-mirsky-%E5%AE%9A%E7%90%86" rel="nofollow">Dilworth 定理 from OI_Wiki</a> ，反正我看不懂🤓）</p>
+<p>对于第二个分任务，事实上可以转化为求最长（递增）子序列的长度。因为每个不上升子数列中的元素在原序列中是不上升的，所以如果我们能找到最长的递增子序列，那么每个递增子序列中的元素必须属于不同的不上升子数列。（严格证明详见 <a href="https://oi-wiki.org/math/order-theory/#dilworth-%E5%AE%9A%E7%90%86%E4%B8%8E-mirsky-%E5%AE%9A%E7%90%86" rel="nofollow">Dilworth 定理 from OI_Wiki</a> ，反正我看不懂）</p>
 <p>所以把上述代码的 $arr_{i} \leqslant arr_{j}$ 变个符号（ &gt; ）就能解决问题了。</p>
 <h5>
 $O(n \log n)$ 优化做法</h5>
@@ -135,7 +135,7 @@ vector&lt;<span class="pl-k">int</span>&gt; dp1;	<span class="pl-c"><span class=
 <span class="pl-c"><span class="pl-c">//</span> 同理找最长严格递增串，只需要改动下面的两处地方：</span>
 <span class="pl-c"><span class="pl-c">//</span> if (dp2.empty() || num &gt; dp2.back())</span>
 <span class="pl-c"><span class="pl-c">//</span> auto it = lower_bound(dp2.begin(), dp2.end(), num);</span></pre></div>
-<p>这样就得到了完全 AC 代码😈</p></div>
+<p>这样就得到了完全 AC 代码</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
