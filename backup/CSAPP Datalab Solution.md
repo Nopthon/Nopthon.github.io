@@ -19,12 +19,13 @@
 | **floatScale2(uf)**     | 返回与表达式 `2 * f` 等价的二进制位表示         | 30              |
 | **floatFloat2Int(uf)**  | 将浮点数转换为整数                              | 30              |
 | **floatPower2(x)**      | 返回与表达式 `2.0 ^ x` 等价的二进制位表示       | 30              |
+<br>
 
 ---
 
 ## Solution
 
-1. ##### 仅用 `&` 和 `~` 实现 `x ^ y` 
+1. ### 仅用 `&` 和 `~` 实现 `x ^ y` 
 
 ​	对 xor 式子进行变换，第一步拆开 xor 表达式为和或非形式，第二步使用德摩根律消去 `|` 运算
 
@@ -38,9 +39,9 @@ int bitXor(int x, int y) {
 }
 ```
 
+<br>
 
-
-2. ##### 返回最小的二进制补码整数
+2. ### 返回最小的二进制补码整数
 
 ​	要求中提到：整数常量只能设置在 0 到 255（ `0xff` ），不允许使用更大的常量（如 `0xffffffff`）
 
@@ -54,9 +55,9 @@ int tmin(void) {
 }
 ```
 
+<br>
 
-
-3. ##### 判断 `x` 是否为最大的二进制补码整数
+3. ### 判断 `x` 是否为最大的二进制补码整数
 
 ​	不能使用控制函数，所以不能 `if` 
 
@@ -80,9 +81,9 @@ int isTmax(int x) {
 }
 ```
 
+<br>
 
-
-4. ##### 判断 `x` 的所有奇数位是否均为 1 （从右往左数，第一个数位为 “第零位” ，可以从样例中看出来）
+4. ### 判断 `x` 的所有奇数位是否均为 1 
 
 ​	也就是判断一个数和掩码 `01010101 01010101 01010101 01010101` 的按位或结果是否为 `0xffffffff` ，如果是，取反后就能得到 `0`，利用 `!` 操作就能解答
 
@@ -90,15 +91,15 @@ int isTmax(int x) {
 
 ```C
 int allOddBits(int x) {
-    int y = 0x55 + (0x55 << 8);
-    int z = y + (y << 16);
-    return !( ~(x | z) );
+	int y = 0x55 + (0x55 << 8);
+	int z = y + (y << 16);
+	return !( ~(x | z) );
 }
 ```
 
+<br>
 
-
-5. ##### 不使用 `-` 运算符返回 `-x`
+5. ### 不使用 `-` 运算符返回 `-x`
 
 ​	对于补码数，取负操作等价为 “按位取反 + 1” ，据此给出解答
 
@@ -116,9 +117,9 @@ int negate(int x) {
 }
 ```
 
+<br>
 
-
-6. ##### 判断 `x` 是否为 ASCII 数字（`0x30 ≤ x ≤ 0x39`）
+6. ### 判断 `x` 是否为 ASCII 数字（`0x30 ≤ x ≤ 0x39`）
 
 ​	首先得从 `0x30` ~ `0x39` 这几个二进制数的性质入手，这些数的二进制都满足右八位为 `0011xxxx`，且 `xxxx` 部分只能对应十六进制 `0~9` （具体来说是满足 `0xxx`（0~7）或者 `100x`（8~9）格式的值）
 
@@ -132,9 +133,9 @@ int isAsciiDigit(int x) {
 }
 ```
 
+<br>
 
-
-7. ##### 实现三目运算符 `x ? y : z` 的功能
+7. ### 实现三目运算符 `x ? y : z` 的功能
 
 ​	等价于 ：`if(x != 0) {return y;} else {return z;}` 
 
@@ -148,14 +149,14 @@ int isAsciiDigit(int x) {
 
 ```C
 int conditional(int x, int y, int z) {
-    int c = !x + (~0);					// 也可以写成 ~(!!x) + 1
+	int c = !x + (~0);					// 也可以写成 ~(!!x) + 1
 	return (c & y) | (~c & z);
 }
 ```
 
-   
+<br>
 
-8. ##### 判断 `x` 是否小于等于 `y` 
+8. ### 判断 `x` 是否小于等于 `y` 
 
 ​	如果 `x <= y` 返回 `1`，否则返回 `0` 
 
@@ -179,9 +180,9 @@ int isLessOrEqual(int x, int y) {
 }
 ```
 
+<br>
 
-
-9. ##### 不使用 `!` 运算符实现 `!x`
+9. ### 不使用 `!` 运算符实现 `!x`
 
 ​	`!` 的运算解释：如果 `x` 非零，则 `!x = 0`，否则 `x == 0 → !x = 1` 
 
@@ -199,9 +200,9 @@ int logicalNeg(int x) {
 }
 ```
 
+<br>
 
-
-10. ##### 返回能完整表示 `x` 所需的最小位数
+10. ### 返回能完整表示 `x` 所需的最小位数
 
     ```C
     /*  Examples: howManyBits(12) = 5					(0 1100)
@@ -236,25 +237,26 @@ if (x 的高 16 位全为零){
 	x = x << 16 >> 16;			// 只保留低 16 位，因为高 16 位已经没有信息提供了
 }
 else {							// 也就是说最高有效位出现在高 16 位中
-    x = x >> 16;				// 把高 16 位当作低 16 位储存
-    Max = Max + 16;				// 后 16 位都贡献了最高有效位
+	x = x >> 16;				// 把高 16 位当作低 16 位储存
+	Max = Max + 16;				// 后 16 位都贡献了最高有效位
 }
 
 if (x 的高 8 位全为零){			// 对剩下的部分继续二分寻找
 	x = x << 8 >> 8;
 }
 else {
-    x = x >> 8;
-    Max = Max + 8;
+	x = x >> 8;
+	Max = Max + 8;
 }
 
 // 此处省略一部分查找过程
 
 if (x 的高 1 位为零) {
-    x = x << 1 >> 1;
-} else {
-    x = x >> 1;
-    Max = Max + 1;
+	x = x << 1 >> 1;
+}
+else {
+	x = x >> 1;
+	Max = Max + 1;
 }
 
 Max = Max + (x != 0);			// 最后计算剩下的一位的贡献
@@ -268,8 +270,9 @@ if (x 的高 16 位全为零){
 	x = x << 16 >> 16;			// 只保留低 16 位，因为高 16 位已经没有信息提供了
 }
 else {							// 也就是说最高有效位出现在高 16 位中
-    x = x >> 16;
-    Max = Max + 16;				// 后 16 位都贡献了最高有效位
+	x = x >> 16;
+	Max = Max + 16;				// 后 16 位都贡献了最高有效位
+}
 ```
 
 ​	给出这一部分的 C 语言实现：
@@ -293,32 +296,32 @@ x = x >> (check << 4);				// 如果高 16 位不为 0，那就把高 16 位移�
 ```C
 int howManyBits(int x) {
 	int sign = x >> 31;					// 算术右移
-    int check = 0;						// dlc 程序要求变量必须在最开始声明
-    int Max = 0;
+	int check = 0;						// dlc 程序要求变量必须在最开始声明
+	int Max = 0;
 	x = (sign & ~x) | (~sign & x);
 
-    check = !!(x & ((0xff + (0xff << 8)) << 16) );	// 题目限制常量不大于0xff，需要额外构造
+	check = !!(x & ((0xff + (0xff << 8)) << 16) );	// 题目限制常量不大于0xff，需要额外构造
 	Max = Max | (check << 4);			// 这里用 | 代替了 +，因为每次 Max 的变化都只涉及单一数位
 	x = x >> (check << 4);
-    check = !!(x & (0xff << 8) );
+	check = !!(x & (0xff << 8) );
 	Max = Max | (check << 3);
 	x = x >> (check << 3);
-    check = !!(x & 0xf0);
+	check = !!(x & 0xf0);
 	Max = Max | (check << 2);
 	x = x >> (check << 2);
-    check = !!(x & 0xc);
+	check = !!(x & 0xc);
 	Max = Max | (check << 1);
 	x = x >> (check << 1);
-    check = !!(x & 0x2);
+	check = !!(x & 0x2);
 	Max = Max | check;
 	x = x >> check;
-    Max = Max + !!(x | 0);
+	Max = Max + !!(x | 0);
     
-    return (!x & 1) | (~!x & Max+1);	// 对 x == -1 进行了特判（发现 x == 0 不需要特判） 
+	return (!x & 1) | (~!x & Max+1);	// 对 x == -1 进行了特判（发现 x == 0 不需要特判） 
 }
 ```
 
-
+<br>
 
 *（接下来的三道题放开了 `if` `while` 控制语句，`||` `&&` `==` 的使用）*
 
@@ -326,9 +329,9 @@ int howManyBits(int x) {
 >
 > IEEE 754 标准的单精度浮点数：1bit 符号位 + 8bits 指数位 + 23bits 尾数位
 
+<br>
 
-
-11. ##### 返回与表达式 `2 * f` 等价的二进制位表示
+11. ### 返回与表达式 `2 * f` 等价的二进制位表示
 
 ​	把 `f` 理解为单精度浮点数，**对于 `NaN` `Inf` 直接输出原数，对于规格化数将指数部分加 1，对于非规格化数将尾数部分左移一位**。需要注意的是，对于非规格化数的底数左移，可能会使其变成规格化数，实际上直接将尾数部分左移即可，没有特殊影响
 
@@ -338,26 +341,26 @@ int howManyBits(int x) {
 
 ```C
 unsigned floatScale2(unsigned uf) {
-    // 提取指数位
+	// 提取指数位
 	unsigned exp = (uf >> 23) & 0xff;
-    // 特殊值
-    if(exp == 0xff){
-        return uf;
-    }
-    // 非规格化数
-    if(exp == 0){
-        return (uf & 0x80000000) | ((uf & 0x007fffff) << 1);
-    }
-    // 规格化数
-    {
-        return (uf & 0x807fffff) | ((uf & 0x7f800000) + 0x00800000);
-    }
+	// 特殊值
+	if(exp == 0xff){
+		return uf;
+	}
+	// 非规格化数
+	if(exp == 0){
+		return (uf & 0x80000000) | ((uf & 0x007fffff) << 1);
+	}
+	// 规格化数
+	{
+		return (uf & 0x807fffff) | ((uf & 0x7f800000) + 0x00800000);
+	}
 }
 ```
 
+<br>
 
-
-12. ##### 将浮点数 `f` 转换为整数
+12. ### 将浮点数 `f` 转换为整数
 
 ​	对于 `NaN` `Inf` 输出 `0x80000000u` ，对于其他 `f`，进行强制类型转换为 `int` 操作
 
@@ -380,34 +383,34 @@ $$
 ```C
 int floatFloat2Int(unsigned uf) {
 	unsigned exp = (uf >> 23) & 0xff;
-    unsigned frac = uf & 0x007fffff;
-    unsigned sign = uf >> 31;
-    if(exp > 157){
-        return 0x80000000u;
-    }
-    if(exp < 127){
-        return 0;
-    }
-    frac = frac | 0x00800000;
-    if(exp > 150){
-        frac = frac << (exp - 150);
-    }
-    else {
-        frac = frac >> (150 - exp);
-    }
+	unsigned frac = uf & 0x007fffff;
+	unsigned sign = uf >> 31;
+	if(exp > 157){
+		return 0x80000000u;
+	}
+	if(exp < 127){
+		return 0;
+	}
+	frac = frac | 0x00800000;
+	if(exp > 150){
+		frac = frac << (exp - 150);
+	}
+	else {
+		frac = frac >> (150 - exp);
+	}
     
-    if (sign){
-        return ~frac + 1;
-    }
-    else {
-        return frac;
-    }
+	if (sign){
+		return ~frac + 1;
+	}
+	else {
+		return frac;
+	}
 }
 ```
 
+<br>
 
-
-13. 返回与表达式 `2.0 ^ x` 等价的二进制位表示 
+13. ### 返回与表达式 `2.0 ^ x` 等价的二进制位表示 
 
 ​	“如果结果太小无法用非规格化数表示，则返回 `0`。如果结果太大，则返回 `+INF` ”
 
@@ -420,20 +423,20 @@ int floatFloat2Int(unsigned uf) {
 ```C
 unsigned floatPower2(int x) {
 	if(x < -149){
-        return 0;
-    }
-    if(x > 127){
-        return 0x7f800000;
-    }
-    if(x > -127){
-        return (x + 127) << 23;
-    }
-    {
-        return 1 << (x + 149);
-    }
+        	return 0;
+    	}
+	if(x > 127){
+		return 0x7f800000;
+	}
+	if(x > -127){
+		return (x + 127) << 23;
+	}
+	{
+		return 1 << (x + 149);
+	}
 }
 ```
-
+<br>
 ---
 
 附： `driver.pl` 评测结果
@@ -458,7 +461,7 @@ Points  Rating  Errors  Points  Ops     Puzzle
 Score = 62/62 [36/36 Corr + 26/26 Perf] (148 total operators)
 ```
 
-
+<br>
 
 附：实验相关说明
 

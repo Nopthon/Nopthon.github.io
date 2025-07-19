@@ -31,12 +31,13 @@
 | **floatScale2(uf)**     | 返回与表达式 `2 * f` 等价的二进制位表示         | 30              |
 | **floatFloat2Int(uf)**  | 将浮点数转换为整数                              | 30              |
 | **floatPower2(x)**      | 返回与表达式 `2.0 ^ x` 等价的二进制位表示       | 30              |
+<br>
 
 ---
 
 ## Solution
 
-1. ##### 仅用 `&` 和 `~` 实现 `x ^ y` 
+1. ### 仅用 `&` 和 `~` 实现 `x ^ y` 
 
 ​	对 xor 式子进行变换，第一步拆开 xor 表达式为和或非形式，第二步使用德摩根律消去 `|` 运算
 
@@ -50,9 +51,9 @@ int bitXor(int x, int y) {
 }
 ```
 
+<br>
 
-
-2. ##### 返回最小的二进制补码整数
+2. ### 返回最小的二进制补码整数
 
 ​	要求中提到：整数常量只能设置在 0 到 255（ `0xff` ），不允许使用更大的常量（如 `0xffffffff`）
 
@@ -66,9 +67,9 @@ int tmin(void) {
 }
 ```
 
+<br>
 
-
-3. ##### 判断 `x` 是否为最大的二进制补码整数
+3. ### 判断 `x` 是否为最大的二进制补码整数
 
 ​	不能使用控制函数，所以不能 `if` 
 
@@ -95,12 +96,13 @@ int tmin(void) {
 | **floatScale2(uf)**     | 返回与表达式 `2 * f` 等价的二进制位表示         | 30              |
 | **floatFloat2Int(uf)**  | 将浮点数转换为整数                              | 30              |
 | **floatPower2(x)**      | 返回与表达式 `2.0 ^ x` 等价的二进制位表示       | 30              |
+<br>
 
 ---
 
 ## Solution
 
-1. ##### 仅用 `&` 和 `~` 实现 `x ^ y` 
+1. ### 仅用 `&` 和 `~` 实现 `x ^ y` 
 
 ​	对 xor 式子进行变换，第一步拆开 xor 表达式为和或非形式，第二步使用德摩根律消去 `|` 运算
 
@@ -114,9 +116,9 @@ int bitXor(int x, int y) {
 }
 ```
 
+<br>
 
-
-2. ##### 返回最小的二进制补码整数
+2. ### 返回最小的二进制补码整数
 
 ​	要求中提到：整数常量只能设置在 0 到 255（ `0xff` ），不允许使用更大的常量（如 `0xffffffff`）
 
@@ -130,9 +132,9 @@ int tmin(void) {
 }
 ```
 
+<br>
 
-
-3. ##### 判断 `x` 是否为最大的二进制补码整数
+3. ### 判断 `x` 是否为最大的二进制补码整数
 
 ​	不能使用控制函数，所以不能 `if` 
 
@@ -286,11 +288,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
+<br>
 <hr>
 <h2>Solution</h2>
 <ol>
 <li>
-<h5>仅用 <code class="notranslate">&amp;</code> 和 <code class="notranslate">~</code> 实现 <code class="notranslate">x ^ y</code></h5>
+<h3>仅用 <code class="notranslate">&amp;</code> 和 <code class="notranslate">~</code> 实现 <code class="notranslate">x ^ y</code></h3>
 </li>
 </ol>
 <p>​	对 xor 式子进行变换，第一步拆开 xor 表达式为和或非形式，第二步使用德摩根律消去 <code class="notranslate">|</code> 运算</p>
@@ -299,9 +302,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-en">bitXor</span>(<span class="pl-smi">int</span> <span class="pl-s1">x</span>, <span class="pl-smi">int</span> <span class="pl-s1">y</span>) {
 	<span class="pl-k">return</span> ~( (~ (~<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> <span class="pl-s1">y</span>)) <span class="pl-c1">&amp;</span> (~ (<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> ~<span class="pl-s1">y</span>)) );
 }</pre></div>
+<br>
 <ol start="2">
 <li>
-<h5>返回最小的二进制补码整数</h5>
+<h3>返回最小的二进制补码整数</h3>
 </li>
 </ol>
 <p>​	要求中提到：整数常量只能设置在 0 到 255（ <code class="notranslate">0xff</code> ），不允许使用更大的常量（如 <code class="notranslate">0xffffffff</code>）</p>
@@ -310,9 +314,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-en">tmin</span>(<span class="pl-smi">void</span>) {
 	<span class="pl-k">return</span> <span class="pl-c1">0x80</span> &lt;&lt; <span class="pl-c1">24</span>;
 }</pre></div>
+<br>
 <ol start="3">
 <li>
-<h5>判断 <code class="notranslate">x</code> 是否为最大的二进制补码整数</h5>
+<h3>判断 <code class="notranslate">x</code> 是否为最大的二进制补码整数</h3>
 </li>
 </ol>
 <p>​	不能使用控制函数，所以不能 <code class="notranslate">if</code></p>
@@ -327,21 +332,23 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-en">isTmax</span>(<span class="pl-smi">int</span> <span class="pl-s1">x</span>) {
 	<span class="pl-k">return</span> !( (<span class="pl-s1">x</span><span class="pl-c1">+</span><span class="pl-c1">1</span>) ^ (~<span class="pl-s1">x</span>) ) <span class="pl-c1">&amp;</span> !(!(~<span class="pl-s1">x</span>));
 }</pre></div>
+<br>
 <ol start="4">
 <li>
-<h5>判断 <code class="notranslate">x</code> 的所有奇数位是否均为 1 （从右往左数，第一个数位为 “第零位” ，可以从样例中看出来）</h5>
+<h3>判断 <code class="notranslate">x</code> 的所有奇数位是否均为 1</h3>
 </li>
 </ol>
 <p>​	也就是判断一个数和掩码 <code class="notranslate">01010101 01010101 01010101 01010101</code> 的按位或结果是否为 <code class="notranslate">0xffffffff</code> ，如果是，取反后就能得到 <code class="notranslate">0</code>，利用 <code class="notranslate">!</code> 操作就能解答</p>
 <p>​	code:</p>
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-en">allOddBits</span>(<span class="pl-smi">int</span> <span class="pl-s1">x</span>) {
-    <span class="pl-smi">int</span> <span class="pl-s1">y</span> <span class="pl-c1">=</span> <span class="pl-c1">0x55</span> <span class="pl-c1">+</span> (<span class="pl-c1">0x55</span> &lt;&lt; <span class="pl-c1">8</span>);
-    <span class="pl-smi">int</span> <span class="pl-s1">z</span> <span class="pl-c1">=</span> <span class="pl-s1">y</span> <span class="pl-c1">+</span> (<span class="pl-s1">y</span> &lt;&lt; <span class="pl-c1">16</span>);
-    <span class="pl-k">return</span> !( ~(<span class="pl-s1">x</span> | <span class="pl-s1">z</span>) );
+	<span class="pl-smi">int</span> <span class="pl-s1">y</span> <span class="pl-c1">=</span> <span class="pl-c1">0x55</span> <span class="pl-c1">+</span> (<span class="pl-c1">0x55</span> &lt;&lt; <span class="pl-c1">8</span>);
+	<span class="pl-smi">int</span> <span class="pl-s1">z</span> <span class="pl-c1">=</span> <span class="pl-s1">y</span> <span class="pl-c1">+</span> (<span class="pl-s1">y</span> &lt;&lt; <span class="pl-c1">16</span>);
+	<span class="pl-k">return</span> !( ~(<span class="pl-s1">x</span> | <span class="pl-s1">z</span>) );
 }</pre></div>
+<br>
 <ol start="5">
 <li>
-<h5>不使用 <code class="notranslate">-</code> 运算符返回 <code class="notranslate">-x</code></h5>
+<h3>不使用 <code class="notranslate">-</code> 运算符返回 <code class="notranslate">-x</code></h3>
 </li>
 </ol>
 <p>​	对于补码数，取负操作等价为 “按位取反 + 1” ，据此给出解答</p>
@@ -353,9 +360,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-en">negate</span>(<span class="pl-smi">int</span> <span class="pl-s1">x</span>) {
 	<span class="pl-k">return</span> (~<span class="pl-s1">x</span><span class="pl-c1">+</span><span class="pl-c1">1</span>);
 }</pre></div>
+<br>
 <ol start="6">
 <li>
-<h5>判断 <code class="notranslate">x</code> 是否为 ASCII 数字（<code class="notranslate">0x30 ≤ x ≤ 0x39</code>）</h5>
+<h3>判断 <code class="notranslate">x</code> 是否为 ASCII 数字（<code class="notranslate">0x30 ≤ x ≤ 0x39</code>）</h3>
 </li>
 </ol>
 <p>​	首先得从 <code class="notranslate">0x30</code> ~ <code class="notranslate">0x39</code> 这几个二进制数的性质入手，这些数的二进制都满足右八位为 <code class="notranslate">0011xxxx</code>，且 <code class="notranslate">xxxx</code> 部分只能对应十六进制 <code class="notranslate">0~9</code> （具体来说是满足 <code class="notranslate">0xxx</code>（0<del>7）或者 <code class="notranslate">100x</code>（8</del>9）格式的值）</p>
@@ -364,9 +372,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-en">isAsciiDigit</span>(<span class="pl-smi">int</span> <span class="pl-s1">x</span>) {
 	<span class="pl-k">return</span> !( (<span class="pl-s1">x</span> &gt;&gt; <span class="pl-c1">3</span>) ^ (<span class="pl-c1">0x06</span>) ) | !( (<span class="pl-s1">x</span> &gt;&gt; <span class="pl-c1">1</span>) ^ (<span class="pl-c1">0x1c</span>) );
 }</pre></div>
+<br>
 <ol start="7">
 <li>
-<h5>实现三目运算符 <code class="notranslate">x ? y : z</code> 的功能</h5>
+<h3>实现三目运算符 <code class="notranslate">x ? y : z</code> 的功能</h3>
 </li>
 </ol>
 <p>​	等价于 ：<code class="notranslate">if(x != 0) {return y;} else {return z;}</code></p>
@@ -375,12 +384,13 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>​	考虑 <code class="notranslate">!x</code> 操作只会将 <code class="notranslate">x</code> 变为 <code class="notranslate">0</code> 或 <code class="notranslate">1</code> ，而这两个数减去一恰好对应 <code class="notranslate">0xffffffff</code> 与 <code class="notranslate">0</code> ，这就解决了构造函数的问题：<code class="notranslate">f(x) = (!x) - 1</code> （题目要求只能用加号，所以这里还需要构造 <code class="notranslate">-1</code> ）</p>
 <p>​	code:</p>
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-en">conditional</span>(<span class="pl-smi">int</span> <span class="pl-s1">x</span>, <span class="pl-smi">int</span> <span class="pl-s1">y</span>, <span class="pl-smi">int</span> <span class="pl-s1">z</span>) {
-    <span class="pl-smi">int</span> <span class="pl-s1">c</span> <span class="pl-c1">=</span> !<span class="pl-s1">x</span> <span class="pl-c1">+</span> (~<span class="pl-c1">0</span>);					<span class="pl-c">// 也可以写成 ~(!!x) + 1</span>
+	<span class="pl-smi">int</span> <span class="pl-s1">c</span> <span class="pl-c1">=</span> !<span class="pl-s1">x</span> <span class="pl-c1">+</span> (~<span class="pl-c1">0</span>);					<span class="pl-c">// 也可以写成 ~(!!x) + 1</span>
 	<span class="pl-k">return</span> (<span class="pl-s1">c</span> <span class="pl-c1">&amp;</span> <span class="pl-s1">y</span>) | (~<span class="pl-s1">c</span> <span class="pl-c1">&amp;</span> <span class="pl-s1">z</span>);
 }</pre></div>
+<br>
 <ol start="8">
 <li>
-<h5>判断 <code class="notranslate">x</code> 是否小于等于 <code class="notranslate">y</code></h5>
+<h3>判断 <code class="notranslate">x</code> 是否小于等于 <code class="notranslate">y</code></h3>
 </li>
 </ol>
 <p>​	如果 <code class="notranslate">x &lt;= y</code> 返回 <code class="notranslate">1</code>，否则返回 <code class="notranslate">0</code></p>
@@ -395,9 +405,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-en">isLessOrEqual</span>(<span class="pl-smi">int</span> <span class="pl-s1">x</span>, <span class="pl-smi">int</span> <span class="pl-s1">y</span>) {
 	<span class="pl-k">return</span> (!((<span class="pl-s1">x</span> ^ <span class="pl-s1">y</span>) &gt;&gt; <span class="pl-c1">31</span>) <span class="pl-c1">&amp;</span> !((<span class="pl-s1">y</span> <span class="pl-c1">+</span> (~<span class="pl-s1">x</span> <span class="pl-c1">+</span> <span class="pl-c1">1</span>) ) &gt;&gt; <span class="pl-c1">31</span>)) | ((<span class="pl-s1">x</span> &gt;&gt; <span class="pl-c1">31</span>) <span class="pl-c1">&amp;</span> !(<span class="pl-s1">y</span> &gt;&gt; <span class="pl-c1">31</span>));
 }</pre></div>
+<br>
 <ol start="9">
 <li>
-<h5>不使用 <code class="notranslate">!</code> 运算符实现 <code class="notranslate">!x</code></h5>
+<h3>不使用 <code class="notranslate">!</code> 运算符实现 <code class="notranslate">!x</code></h3>
 </li>
 </ol>
 <p>​	<code class="notranslate">!</code> 的运算解释：如果 <code class="notranslate">x</code> 非零，则 <code class="notranslate">!x = 0</code>，否则 <code class="notranslate">x == 0 → !x = 1</code></p>
@@ -409,9 +420,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-en">logicalNeg</span>(<span class="pl-smi">int</span> <span class="pl-s1">x</span>) {
 	<span class="pl-k">return</span> ((<span class="pl-s1">x</span> | (~<span class="pl-s1">x</span> <span class="pl-c1">+</span> <span class="pl-c1">1</span>)) &gt;&gt; <span class="pl-c1">31</span>) <span class="pl-c1">+</span> <span class="pl-c1">1</span>;
 }</pre></div>
+<br>
 <ol start="10">
 <li>
-<h5>返回能完整表示 <code class="notranslate">x</code> 所需的最小位数</h5>
+<h3>返回能完整表示 <code class="notranslate">x</code> 所需的最小位数</h3>
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-c">/*  Examples: howManyBits(12) = 5					(0 1100)</span>
 <span class="pl-c"> *            howManyBits(298) = 10					(0 100101010)</span>
 <span class="pl-c"> *            howManyBits(-5) = 4					(1 011)</span>
@@ -434,25 +446,26 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 	<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &lt;&lt; <span class="pl-c1">16</span> &gt;&gt; <span class="pl-c1">16</span>;			<span class="pl-c">// 只保留低 16 位，因为高 16 位已经没有信息提供了</span>
 }
 <span class="pl-k">else</span> {							<span class="pl-c">// 也就是说最高有效位出现在高 16 位中</span>
-    <span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &gt;&gt; <span class="pl-c1">16</span>;				<span class="pl-c">// 把高 16 位当作低 16 位储存</span>
-    <span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> <span class="pl-c1">+</span> <span class="pl-c1">16</span>;				<span class="pl-c">// 后 16 位都贡献了最高有效位</span>
+	<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &gt;&gt; <span class="pl-c1">16</span>;				<span class="pl-c">// 把高 16 位当作低 16 位储存</span>
+	<span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> <span class="pl-c1">+</span> <span class="pl-c1">16</span>;				<span class="pl-c">// 后 16 位都贡献了最高有效位</span>
 }
 
 <span class="pl-k">if</span> (<span class="pl-s1">x</span> <span class="pl-s1">的高</span> <span class="pl-c1">8</span> <span class="pl-s1">位全为零</span>){			<span class="pl-c">// 对剩下的部分继续二分寻找</span>
 	<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &lt;&lt; <span class="pl-c1">8</span> &gt;&gt; <span class="pl-c1">8</span>;
 }
 <span class="pl-k">else</span> {
-    <span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &gt;&gt; <span class="pl-c1">8</span>;
-    <span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> <span class="pl-c1">+</span> <span class="pl-c1">8</span>;
+	<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &gt;&gt; <span class="pl-c1">8</span>;
+	<span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> <span class="pl-c1">+</span> <span class="pl-c1">8</span>;
 }
 
 <span class="pl-c">// 此处省略一部分查找过程</span>
 
 <span class="pl-k">if</span> (<span class="pl-s1">x</span> <span class="pl-s1">的高</span> <span class="pl-c1">1</span> <span class="pl-s1">位为零</span>) {
-    <span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &lt;&lt; <span class="pl-c1">1</span> &gt;&gt; <span class="pl-c1">1</span>;
-} <span class="pl-k">else</span> {
-    <span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &gt;&gt; <span class="pl-c1">1</span>;
-    <span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> <span class="pl-c1">+</span> <span class="pl-c1">1</span>;
+	<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &lt;&lt; <span class="pl-c1">1</span> &gt;&gt; <span class="pl-c1">1</span>;
+}
+<span class="pl-k">else</span> {
+	<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &gt;&gt; <span class="pl-c1">1</span>;
+	<span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> <span class="pl-c1">+</span> <span class="pl-c1">1</span>;
 }
 
 <span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> <span class="pl-c1">+</span> (<span class="pl-s1">x</span> <span class="pl-c1">!=</span> <span class="pl-c1">0</span>);			<span class="pl-c">// 最后计算剩下的一位的贡献</span></pre></div>
@@ -461,8 +474,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 	<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &lt;&lt; <span class="pl-c1">16</span> &gt;&gt; <span class="pl-c1">16</span>;			<span class="pl-c">// 只保留低 16 位，因为高 16 位已经没有信息提供了</span>
 }
 <span class="pl-k">else</span> {							<span class="pl-c">// 也就是说最高有效位出现在高 16 位中</span>
-    <span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &gt;&gt; <span class="pl-c1">16</span>;
-    <span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> <span class="pl-c1">+</span> <span class="pl-c1">16</span>;				<span class="pl-c">// 后 16 位都贡献了最高有效位</span></pre></div>
+	<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &gt;&gt; <span class="pl-c1">16</span>;
+	<span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> <span class="pl-c1">+</span> <span class="pl-c1">16</span>;				<span class="pl-c">// 后 16 位都贡献了最高有效位</span>
+}</pre></div>
 <p>​	给出这一部分的 C 语言实现：</p>
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-s1">check</span> <span class="pl-c1">=</span> !!(<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0xffff0000</span>);		<span class="pl-c">// 高 16 位全零时值为 0，否则值为 1；</span>
 <span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> <span class="pl-c1">+</span> (<span class="pl-s1">check</span> &lt;&lt; <span class="pl-c1">4</span>);			<span class="pl-c">// 将 0 1 映射到了 0 16，这恰好满足对 Max 的增加情况</span>
@@ -475,36 +489,38 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>​	code:</p>
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-en">howManyBits</span>(<span class="pl-smi">int</span> <span class="pl-s1">x</span>) {
 	<span class="pl-smi">int</span> <span class="pl-s1">sign</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &gt;&gt; <span class="pl-c1">31</span>;					<span class="pl-c">// 算术右移</span>
-    <span class="pl-smi">int</span> <span class="pl-s1">check</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>;						<span class="pl-c">// dlc 程序要求变量必须在最开始声明</span>
-    <span class="pl-smi">int</span> <span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>;
+	<span class="pl-smi">int</span> <span class="pl-s1">check</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>;						<span class="pl-c">// dlc 程序要求变量必须在最开始声明</span>
+	<span class="pl-smi">int</span> <span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>;
 	<span class="pl-s1">x</span> <span class="pl-c1">=</span> (<span class="pl-s1">sign</span> <span class="pl-c1">&amp;</span> ~<span class="pl-s1">x</span>) | (~<span class="pl-s1">sign</span> <span class="pl-c1">&amp;</span> <span class="pl-s1">x</span>);
 
-    <span class="pl-s1">check</span> <span class="pl-c1">=</span> !!(<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> ((<span class="pl-c1">0xff</span> <span class="pl-c1">+</span> (<span class="pl-c1">0xff</span> &lt;&lt; <span class="pl-c1">8</span>)) &lt;&lt; <span class="pl-c1">16</span>) );	<span class="pl-c">// 题目限制常量不大于0xff，需要额外构造</span>
+	<span class="pl-s1">check</span> <span class="pl-c1">=</span> !!(<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> ((<span class="pl-c1">0xff</span> <span class="pl-c1">+</span> (<span class="pl-c1">0xff</span> &lt;&lt; <span class="pl-c1">8</span>)) &lt;&lt; <span class="pl-c1">16</span>) );	<span class="pl-c">// 题目限制常量不大于0xff，需要额外构造</span>
 	<span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> | (<span class="pl-s1">check</span> &lt;&lt; <span class="pl-c1">4</span>);			<span class="pl-c">// 这里用 | 代替了 +，因为每次 Max 的变化都只涉及单一数位</span>
 	<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &gt;&gt; (<span class="pl-s1">check</span> &lt;&lt; <span class="pl-c1">4</span>);
-    <span class="pl-s1">check</span> <span class="pl-c1">=</span> !!(<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> (<span class="pl-c1">0xff</span> &lt;&lt; <span class="pl-c1">8</span>) );
+	<span class="pl-s1">check</span> <span class="pl-c1">=</span> !!(<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> (<span class="pl-c1">0xff</span> &lt;&lt; <span class="pl-c1">8</span>) );
 	<span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> | (<span class="pl-s1">check</span> &lt;&lt; <span class="pl-c1">3</span>);
 	<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &gt;&gt; (<span class="pl-s1">check</span> &lt;&lt; <span class="pl-c1">3</span>);
-    <span class="pl-s1">check</span> <span class="pl-c1">=</span> !!(<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0xf0</span>);
+	<span class="pl-s1">check</span> <span class="pl-c1">=</span> !!(<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0xf0</span>);
 	<span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> | (<span class="pl-s1">check</span> &lt;&lt; <span class="pl-c1">2</span>);
 	<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &gt;&gt; (<span class="pl-s1">check</span> &lt;&lt; <span class="pl-c1">2</span>);
-    <span class="pl-s1">check</span> <span class="pl-c1">=</span> !!(<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0xc</span>);
+	<span class="pl-s1">check</span> <span class="pl-c1">=</span> !!(<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0xc</span>);
 	<span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> | (<span class="pl-s1">check</span> &lt;&lt; <span class="pl-c1">1</span>);
 	<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &gt;&gt; (<span class="pl-s1">check</span> &lt;&lt; <span class="pl-c1">1</span>);
-    <span class="pl-s1">check</span> <span class="pl-c1">=</span> !!(<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0x2</span>);
+	<span class="pl-s1">check</span> <span class="pl-c1">=</span> !!(<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0x2</span>);
 	<span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> | <span class="pl-s1">check</span>;
 	<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &gt;&gt; <span class="pl-s1">check</span>;
-    <span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> <span class="pl-c1">+</span> !!(<span class="pl-s1">x</span> | <span class="pl-c1">0</span>);
+	<span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> <span class="pl-c1">+</span> !!(<span class="pl-s1">x</span> | <span class="pl-c1">0</span>);
     
-    <span class="pl-k">return</span> (!<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">1</span>) | (~!<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> <span class="pl-s1">Max</span><span class="pl-c1">+</span><span class="pl-c1">1</span>);	<span class="pl-c">// 对 x == -1 进行了特判（发现 x == 0 不需要特判） </span>
+	<span class="pl-k">return</span> (!<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">1</span>) | (~!<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> <span class="pl-s1">Max</span><span class="pl-c1">+</span><span class="pl-c1">1</span>);	<span class="pl-c">// 对 x == -1 进行了特判（发现 x == 0 不需要特判） </span>
 }</pre></div>
+<br>
 <p><em>（接下来的三道题放开了 <code class="notranslate">if</code> <code class="notranslate">while</code> 控制语句，<code class="notranslate">||</code> <code class="notranslate">&amp;&amp;</code> <code class="notranslate">==</code> 的使用）</em></p>
 <div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
 <p>IEEE 754 标准的单精度浮点数：1bit 符号位 + 8bits 指数位 + 23bits 尾数位</p>
 </div>
+<br>
 <ol start="11">
 <li>
-<h5>返回与表达式 <code class="notranslate">2 * f</code> 等价的二进制位表示</h5>
+<h3>返回与表达式 <code class="notranslate">2 * f</code> 等价的二进制位表示</h3>
 </li>
 </ol>
 <p>​	把 <code class="notranslate">f</code> 理解为单精度浮点数，<strong>对于 <code class="notranslate">NaN</code> <code class="notranslate">Inf</code> 直接输出原数，对于规格化数将指数部分加 1，对于非规格化数将尾数部分左移一位</strong>。需要注意的是，对于非规格化数的底数左移，可能会使其变成规格化数，实际上直接将尾数部分左移即可，没有特殊影响</p>
@@ -513,24 +529,25 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </blockquote>
 <p>​	code:</p>
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">unsigned</span> <span class="pl-en">floatScale2</span>(<span class="pl-smi">unsigned</span> <span class="pl-s1">uf</span>) {
-    <span class="pl-c">// 提取指数位</span>
+	<span class="pl-c">// 提取指数位</span>
 	<span class="pl-smi">unsigned</span> <span class="pl-s1">exp</span> <span class="pl-c1">=</span> (<span class="pl-s1">uf</span> &gt;&gt; <span class="pl-c1">23</span>) <span class="pl-c1">&amp;</span> <span class="pl-c1">0xff</span>;
-    <span class="pl-c">// 特殊值</span>
-    <span class="pl-k">if</span>(<span class="pl-s1">exp</span> <span class="pl-c1">==</span> <span class="pl-c1">0xff</span>){
-        <span class="pl-k">return</span> <span class="pl-s1">uf</span>;
-    }
-    <span class="pl-c">// 非规格化数</span>
-    <span class="pl-k">if</span>(<span class="pl-s1">exp</span> <span class="pl-c1">==</span> <span class="pl-c1">0</span>){
-        <span class="pl-k">return</span> (<span class="pl-s1">uf</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0x80000000</span>) | ((<span class="pl-s1">uf</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0x007fffff</span>) &lt;&lt; <span class="pl-c1">1</span>);
-    }
-    <span class="pl-c">// 规格化数</span>
-    {
-        <span class="pl-k">return</span> (<span class="pl-s1">uf</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0x807fffff</span>) | ((<span class="pl-s1">uf</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0x7f800000</span>) <span class="pl-c1">+</span> <span class="pl-c1">0x00800000</span>);
-    }
+	<span class="pl-c">// 特殊值</span>
+	<span class="pl-k">if</span>(<span class="pl-s1">exp</span> <span class="pl-c1">==</span> <span class="pl-c1">0xff</span>){
+		<span class="pl-k">return</span> <span class="pl-s1">uf</span>;
+	}
+	<span class="pl-c">// 非规格化数</span>
+	<span class="pl-k">if</span>(<span class="pl-s1">exp</span> <span class="pl-c1">==</span> <span class="pl-c1">0</span>){
+		<span class="pl-k">return</span> (<span class="pl-s1">uf</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0x80000000</span>) | ((<span class="pl-s1">uf</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0x007fffff</span>) &lt;&lt; <span class="pl-c1">1</span>);
+	}
+	<span class="pl-c">// 规格化数</span>
+	{
+		<span class="pl-k">return</span> (<span class="pl-s1">uf</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0x807fffff</span>) | ((<span class="pl-s1">uf</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0x7f800000</span>) <span class="pl-c1">+</span> <span class="pl-c1">0x00800000</span>);
+	}
 }</pre></div>
+<br>
 <ol start="12">
 <li>
-<h5>将浮点数 <code class="notranslate">f</code> 转换为整数</h5>
+<h3>将浮点数 <code class="notranslate">f</code> 转换为整数</h3>
 </li>
 </ol>
 <p>​	对于 <code class="notranslate">NaN</code> <code class="notranslate">Inf</code> 输出 <code class="notranslate">0x80000000u</code> ，对于其他 <code class="notranslate">f</code>，进行强制类型转换为 <code class="notranslate">int</code> 操作</p>
@@ -545,31 +562,34 @@ $$</p>
 <p>​	code:</p>
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-en">floatFloat2Int</span>(<span class="pl-smi">unsigned</span> <span class="pl-s1">uf</span>) {
 	<span class="pl-smi">unsigned</span> <span class="pl-s1">exp</span> <span class="pl-c1">=</span> (<span class="pl-s1">uf</span> &gt;&gt; <span class="pl-c1">23</span>) <span class="pl-c1">&amp;</span> <span class="pl-c1">0xff</span>;
-    <span class="pl-smi">unsigned</span> <span class="pl-s1">frac</span> <span class="pl-c1">=</span> <span class="pl-s1">uf</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0x007fffff</span>;
-    <span class="pl-smi">unsigned</span> <span class="pl-s1">sign</span> <span class="pl-c1">=</span> <span class="pl-s1">uf</span> &gt;&gt; <span class="pl-c1">31</span>;
-    <span class="pl-k">if</span>(<span class="pl-s1">exp</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">157</span>){
-        <span class="pl-k">return</span> <span class="pl-c1">0x80000000u</span>;
-    }
-    <span class="pl-k">if</span>(<span class="pl-s1">exp</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">127</span>){
-        <span class="pl-k">return</span> <span class="pl-c1">0</span>;
-    }
-    <span class="pl-s1">frac</span> <span class="pl-c1">=</span> <span class="pl-s1">frac</span> | <span class="pl-c1">0x00800000</span>;
-    <span class="pl-k">if</span>(<span class="pl-s1">exp</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">150</span>){
-        <span class="pl-s1">frac</span> <span class="pl-c1">=</span> <span class="pl-s1">frac</span> &lt;&lt; (<span class="pl-s1">exp</span> <span class="pl-c1">-</span> <span class="pl-c1">150</span>);
-    }
-    <span class="pl-k">else</span> {
-        <span class="pl-s1">frac</span> <span class="pl-c1">=</span> <span class="pl-s1">frac</span> &gt;&gt; (<span class="pl-c1">150</span> <span class="pl-c1">-</span> <span class="pl-s1">exp</span>);
-    }
+	<span class="pl-smi">unsigned</span> <span class="pl-s1">frac</span> <span class="pl-c1">=</span> <span class="pl-s1">uf</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0x007fffff</span>;
+	<span class="pl-smi">unsigned</span> <span class="pl-s1">sign</span> <span class="pl-c1">=</span> <span class="pl-s1">uf</span> &gt;&gt; <span class="pl-c1">31</span>;
+	<span class="pl-k">if</span>(<span class="pl-s1">exp</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">157</span>){
+		<span class="pl-k">return</span> <span class="pl-c1">0x80000000u</span>;
+	}
+	<span class="pl-k">if</span>(<span class="pl-s1">exp</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">127</span>){
+		<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+	}
+	<span class="pl-s1">frac</span> <span class="pl-c1">=</span> <span class="pl-s1">frac</span> | <span class="pl-c1">0x00800000</span>;
+	<span class="pl-k">if</span>(<span class="pl-s1">exp</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">150</span>){
+		<span class="pl-s1">frac</span> <span class="pl-c1">=</span> <span class="pl-s1">frac</span> &lt;&lt; (<span class="pl-s1">exp</span> <span class="pl-c1">-</span> <span class="pl-c1">150</span>);
+	}
+	<span class="pl-k">else</span> {
+		<span class="pl-s1">frac</span> <span class="pl-c1">=</span> <span class="pl-s1">frac</span> &gt;&gt; (<span class="pl-c1">150</span> <span class="pl-c1">-</span> <span class="pl-s1">exp</span>);
+	}
     
-    <span class="pl-k">if</span> (<span class="pl-s1">sign</span>){
-        <span class="pl-k">return</span> ~<span class="pl-s1">frac</span> <span class="pl-c1">+</span> <span class="pl-c1">1</span>;
-    }
-    <span class="pl-k">else</span> {
-        <span class="pl-k">return</span> <span class="pl-s1">frac</span>;
-    }
+	<span class="pl-k">if</span> (<span class="pl-s1">sign</span>){
+		<span class="pl-k">return</span> ~<span class="pl-s1">frac</span> <span class="pl-c1">+</span> <span class="pl-c1">1</span>;
+	}
+	<span class="pl-k">else</span> {
+		<span class="pl-k">return</span> <span class="pl-s1">frac</span>;
+	}
 }</pre></div>
+<br>
 <ol start="13">
-<li>返回与表达式 <code class="notranslate">2.0 ^ x</code> 等价的二进制位表示</li>
+<li>
+<h3>返回与表达式 <code class="notranslate">2.0 ^ x</code> 等价的二进制位表示</h3>
+</li>
 </ol>
 <p>​	“如果结果太小无法用非规格化数表示，则返回 <code class="notranslate">0</code>。如果结果太大，则返回 <code class="notranslate">+INF</code> ”</p>
 <p>​	最小的非规格化数（正数）是 <code class="notranslate">0x1</code> ，对应的值为 $2^{-23} \times 2^{-126} = 2 ^{-149}$，所以 <code class="notranslate">x &lt; -149</code> 时返回 <code class="notranslate">0</code> ；非规格化数的 <code class="notranslate">x</code> 的取值范围是 <code class="notranslate">[-149, -127]</code> ；规格化数的取值范围是 <code class="notranslate">[-126, 127]</code> ，<code class="notranslate">x &gt; 127</code> 时返回 <code class="notranslate">+INF = 0x7F800000</code></p>
@@ -577,19 +597,20 @@ $$</p>
 <p>​	code:</p>
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">unsigned</span> <span class="pl-en">floatPower2</span>(<span class="pl-smi">int</span> <span class="pl-s1">x</span>) {
 	<span class="pl-k">if</span>(<span class="pl-s1">x</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">-149</span>){
-        <span class="pl-k">return</span> <span class="pl-c1">0</span>;
-    }
-    <span class="pl-k">if</span>(<span class="pl-s1">x</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">127</span>){
-        <span class="pl-k">return</span> <span class="pl-c1">0x7f800000</span>;
-    }
-    <span class="pl-k">if</span>(<span class="pl-s1">x</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">-127</span>){
-        <span class="pl-k">return</span> (<span class="pl-s1">x</span> <span class="pl-c1">+</span> <span class="pl-c1">127</span>) &lt;&lt; <span class="pl-c1">23</span>;
-    }
-    {
-        <span class="pl-k">return</span> <span class="pl-c1">1</span> &lt;&lt; (<span class="pl-s1">x</span> <span class="pl-c1">+</span> <span class="pl-c1">149</span>);
-    }
+        	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+    	}
+	<span class="pl-k">if</span>(<span class="pl-s1">x</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">127</span>){
+		<span class="pl-k">return</span> <span class="pl-c1">0x7f800000</span>;
+	}
+	<span class="pl-k">if</span>(<span class="pl-s1">x</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">-127</span>){
+		<span class="pl-k">return</span> (<span class="pl-s1">x</span> <span class="pl-c1">+</span> <span class="pl-c1">127</span>) &lt;&lt; <span class="pl-c1">23</span>;
+	}
+	{
+		<span class="pl-k">return</span> <span class="pl-c1">1</span> &lt;&lt; (<span class="pl-s1">x</span> <span class="pl-c1">+</span> <span class="pl-c1">149</span>);
+	}
 }</pre></div>
-<hr>
+<br>
+---
 <p>附： <code class="notranslate">driver.pl</code> 评测结果</p>
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">Correctness</span> <span class="pl-s1">Results</span>     <span class="pl-smi">Perf</span> <span class="pl-s1">Results</span>
 <span class="pl-smi">Points</span>  <span class="pl-s1">Rating</span>  <span class="pl-smi">Errors</span>  <span class="pl-s1">Points</span>  <span class="pl-smi">Ops</span>     <span class="pl-s1">Puzzle</span>
@@ -608,6 +629,7 @@ $$</p>
 <span class="pl-c1">4</span>       <span class="pl-c1">4</span>       <span class="pl-c1">0</span>       <span class="pl-c1">2</span>       <span class="pl-c1">9</span>       <span class="pl-s1">floatPower2</span>
 
 <span class="pl-s1">Score</span> <span class="pl-c1">=</span> <span class="pl-c1">62</span>/<span class="pl-c1">62</span> [<span class="pl-c1">36</span>/<span class="pl-c1">36</span> <span class="pl-s1">Corr</span> <span class="pl-c1">+</span> <span class="pl-c1">26</span>/<span class="pl-c1">26</span> <span class="pl-s1">Perf</span>] (<span class="pl-c1">148</span> <span class="pl-s1">total</span> <span class="pl-s1">operators</span>)</pre></div>
+<br>
 <p>附：实验相关说明</p>
 <div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p>
 <h4>评分工具</h4>
