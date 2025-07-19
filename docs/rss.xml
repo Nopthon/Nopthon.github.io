@@ -1,5 +1,67 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Nopthon's trashcan</title><link>https://Nopthon.github.io</link><description>一个存放各种各样不知道是什么内容的Trashcan🚮</description><copyright>Nopthon's trashcan</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://nopthon.github.io/burger.svg</url><title>avatar</title><link>https://Nopthon.github.io</link></image><lastBuildDate>Mon, 23 Jun 2025 05:37:27 +0000</lastBuildDate><managingEditor>Nopthon's trashcan</managingEditor><ttl>60</ttl><webMaster>Nopthon's trashcan</webMaster><item><title>Logisim 食用辅助 for DL&amp;CO</title><link>https://Nopthon.github.io/post/Logisim%20-shi-yong-fu-zhu-%20for%20DL%26CO.html</link><description>&gt; [!NOTE]
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Nopthon's trashcan</title><link>https://Nopthon.github.io</link><description>一个存放各种各样不知道是什么内容的Trashcan🚮</description><copyright>Nopthon's trashcan</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://nopthon.github.io/burger.svg</url><title>avatar</title><link>https://Nopthon.github.io</link></image><lastBuildDate>Sat, 19 Jul 2025 15:44:48 +0000</lastBuildDate><managingEditor>Nopthon's trashcan</managingEditor><ttl>60</ttl><webMaster>Nopthon's trashcan</webMaster><item><title>CSAPP Datalab Solution</title><link>https://Nopthon.github.io/post/CSAPP%20Datalab%20Solution.html</link><description># Lab 1: Data Lab
+
+使用 C 语言，在限定条件下，在 `bits.c` 文件中实现下列函数：
+
+（每一题的具体要求可以参考 `bits.c` 注释内容）
+
+| Func Name               | Description                                     | Max Ops Allowed |
+| ----------------------- | ----------------------------------------------- | --------------- |
+| **bitXor(x,y)**         | 仅用 `&amp;` 和 `~` 实现 `x xor y`                  | 14              |
+| **tmin()**              | 返回最小的二进制补码整数                        | 4               |
+| **isTmax(x)**           | 判断 `x` 是否为最大的二进制补码整数             | 10              |
+| **allOddBits(x)**       | 判断 `x` 的所有奇数位是否均为 1                 | 12              |
+| **negate(x)**           | 不使用 `-` 运算符返回 `-x`                      | 5               |
+| **isAsciiDigit(x)**     | 判断 `x` 是否为 ASCII 数字（`0x30 ≤ x ≤ 0x39`） | 15              |
+| **conditional(x,y,z)**  | 实现 `x ? y : z` 的功能                         | 16              |
+| **isLessOrEqual(x, y)** | 判断 `x` 是否小于等于 `y`                       | 24              |
+| **logicalNeg(x)**       | 不使用 `!` 运算符实现 `!x`                      | 12              |
+| **howManyBits(x)**      | 返回表示 `x` 所需的最小位数                     | 90              |
+| **floatScale2(uf)**     | 返回与表达式 `2 * f` 等价的二进制位表示         | 30              |
+| **floatFloat2Int(uf)**  | 将浮点数转换为整数                              | 30              |
+| **floatPower2(x)**      | 返回与表达式 `2.0 ^ x` 等价的二进制位表示       | 30              |
+
+---
+
+## Solution
+
+1. ##### 仅用 `&amp;` 和 `~` 实现 `x ^ y` 
+
+​	对 xor 式子进行变换，第一步拆开 xor 表达式为和或非形式，第二步使用德摩根律消去 `|` 运算
+
+​	`x ^ y = ~( (~ (~x &amp; y)) &amp; (~ (x &amp; ~y)) )`
+
+​	code: 
+
+```C
+int bitXor(int x, int y) {
+	return ~( (~ (~x &amp; y)) &amp; (~ (x &amp; ~y)) );
+}
+```
+
+
+
+2. ##### 返回最小的二进制补码整数
+
+​	要求中提到：整数常量只能设置在 0 到 255（ `0xff` ），不允许使用更大的常量（如 `0xffffffff`）
+
+​	我们知道最小的二进制补码整数是 `10000000 00000000 00000000 00000000` （题设使用 32 位二进制补码表示整数），可以选择将 `10000000` 左移 24 位实现
+
+​	code: 
+
+```C
+int tmin(void) {
+	return 0x80 &lt;&lt; 24;
+}
+```
+
+
+
+3. ##### 判断 `x` 是否为最大的二进制补码整数
+
+​	不能使用控制函数，所以不能 `if` 
+
+​	我们知道最大的二进制补码整数是 `01111111 11111111 11111111 11111111` ，这个数有一个特性： `+1` 操作与取反操作得到相同的值。</description><guid isPermaLink="true">https://Nopthon.github.io/post/CSAPP%20Datalab%20Solution.html</guid><pubDate>Sat, 19 Jul 2025 15:44:21 +0000</pubDate></item><item><title>Logisim 食用辅助 for DL&amp;CO</title><link>https://Nopthon.github.io/post/Logisim%20-shi-yong-fu-zhu-%20for%20DL%26CO.html</link><description>&gt; [!NOTE]
 &gt;
 &gt; 这篇文章可能对正在学习类似于**数字逻辑与计算机组成**（Digital Logic and Computer Organization, **DL&amp;CO**）课程的学生有一定帮助。</description><guid isPermaLink="true">https://Nopthon.github.io/post/Logisim%20-shi-yong-fu-zhu-%20for%20DL%26CO.html</guid><pubDate>Fri, 20 Jun 2025 16:20:07 +0000</pubDate></item><item><title>[Test] [NOIP 1999 提高组] 导弹拦截 题解</title><link>https://Nopthon.github.io/post/%5BTest%5D%20%5BNOIP%201999%20-ti-gao-zu-%5D%20-dao-dan-lan-jie-%20-ti-jie.html</link><description>&gt; [!IMPORTANT]
 &gt; *【这篇题解放在这里是用来测试Gmeek整体渲染效果的，题解内容是半年前随便写的，正确性、严谨性、规范性没有保证，仅供参考（？）】*
