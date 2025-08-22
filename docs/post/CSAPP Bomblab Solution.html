@@ -140,7 +140,7 @@ GNU调试器，支持单步跟踪/内存检查/断点设置等功能。推荐使
 <p>网页对 Tab 的渲染不是很好，在 Github Issues 页面或许会有更好的阅读体验</p>
 </blockquote>
 <hr>
-<h4>Phase 1</h4>
+<h2>Phase 1</h2>
 <div class="highlight highlight-source-assembly"><pre class="notranslate"><span class="pl-en">000000000400ee0 &lt;phase_1&gt;:</span>
 <span class="pl-en">  400ee0:	</span><span class="pl-c1">48</span><span class="pl-en"> </span><span class="pl-c1">83</span><span class="pl-en"> ec </span><span class="pl-c1">08</span><span class="pl-en">          	</span><span class="pl-k">sub</span>    <span class="pl-c1">$</span><span class="pl-c1">0x8</span><span class="pl-s1">,</span><span class="pl-en">%</span><span class="pl-v">rsp</span><span class="pl-en">					# 栈上分配 8byte 的空间（起对齐作用）</span>
 <span class="pl-en">  400ee4:	be </span><span class="pl-c1">00</span><span class="pl-en"> </span><span class="pl-c1">24</span><span class="pl-en"> </span><span class="pl-c1">40</span><span class="pl-en"> </span><span class="pl-c1">00</span><span class="pl-en">       	</span><span class="pl-k">mov</span>    <span class="pl-c1">$</span><span class="pl-c1">0x402400</span><span class="pl-s1">,</span><span class="pl-en">%</span><span class="pl-v">esi</span><span class="pl-en">				# 将 </span><span class="pl-c1">0x402400</span><span class="pl-en"> 这个地址加载到 %</span><span class="pl-v">esi</span><span class="pl-en"> 中</span>
@@ -170,7 +170,7 @@ GNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
 <li><strong><code class="notranslate">&lt;address&gt;</code></strong>：内存地址（可以是寄存器、变量名或直接地址）。</li>
 </ul>
 </div>
-<h4>Phase 2</h4>
+<h2>Phase 2</h2>
 <div class="highlight highlight-source-assembly"><pre class="notranslate"><span class="pl-en">0000000000400efc &lt;phase_2&gt;:</span>
 <span class="pl-en">  400efc:	</span><span class="pl-c1">55</span><span class="pl-en">                   	</span><span class="pl-k">push</span><span class="pl-en">   %</span><span class="pl-v">rbp</span>
 <span class="pl-en">  400efd:	</span><span class="pl-c1">53</span><span class="pl-en">                   	</span><span class="pl-k">push</span><span class="pl-en">   %</span><span class="pl-v">rbx</span><span class="pl-en">							# 被调用者保存寄存器</span>
@@ -236,7 +236,7 @@ GNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
     <span class="pl-en">explode_bomb</span>();
 }</pre></div>
 <p>由此可见，接下来的五个数字都要求每个数字是上一个数字的两倍，因此第二个答案是 <code class="notranslate">1 2 4 8 16 32</code></p>
-<h4>Phase 3</h4>
+<h2>Phase 3</h2>
 <div class="highlight highlight-source-assembly"><pre class="notranslate"><span class="pl-en">0000000000400f43 &lt;phase_3&gt;:</span>
 <span class="pl-en">  400f43:	</span><span class="pl-c1">48</span><span class="pl-en"> </span><span class="pl-c1">83</span><span class="pl-en"> ec </span><span class="pl-c1">18</span><span class="pl-en">          	</span><span class="pl-k">sub</span>    <span class="pl-c1">$</span><span class="pl-c1">0x18</span><span class="pl-s1">,</span><span class="pl-en">%</span><span class="pl-v">rsp</span><span class="pl-en">					# 开辟栈空间</span>
 <span class="pl-en">  400f47:	</span><span class="pl-c1">48</span><span class="pl-en"> 8d 4c </span><span class="pl-c1">24</span><span class="pl-en"> 0c       	</span><span class="pl-k">lea</span><span class="pl-en">    </span><span class="pl-c1">0xc</span><span class="pl-en">(%</span><span class="pl-v">rsp</span><span class="pl-en">)</span><span class="pl-s1">,</span><span class="pl-en">%</span><span class="pl-v">rcx</span><span class="pl-en">				# %</span><span class="pl-v">rcx</span><span class="pl-en"> = %</span><span class="pl-v">rsp</span><span class="pl-en"> </span><span class="pl-s1">+</span><span class="pl-en"> </span><span class="pl-c1">12</span><span class="pl-en">（地址计算）</span>
@@ -358,7 +358,7 @@ GNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
     </tr>
 </tbody></table></markdown-accessiblity-table>
 <p>在上面的组合中随意选择一项作为答案就可以拆除第三个炸弹，比如 <code class="notranslate">2 707</code></p>
-<h4>Phase 4</h4>
+<h2>Phase 4</h2>
 <p>（减少了注释量）</p>
 <div class="highlight highlight-source-assembly"><pre class="notranslate"><span class="pl-en">000000000040100c &lt;phase_4&gt;:</span>
 <span class="pl-en">  40100c:	</span><span class="pl-c1">48</span><span class="pl-en"> </span><span class="pl-c1">83</span><span class="pl-en"> ec </span><span class="pl-c1">18</span><span class="pl-en">          	</span><span class="pl-k">sub</span>    <span class="pl-c1">$</span><span class="pl-c1">0x18</span><span class="pl-s1">,</span><span class="pl-en">%</span><span class="pl-v">rsp</span>
@@ -457,7 +457,7 @@ GNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
 <p>所以我的第一个输入必须可以直接在二分查找的时候被精准定位：</p>
 <p><code class="notranslate">14 // 2 = 7</code> <code class="notranslate">7 // 2 = 3</code> <code class="notranslate">3 // 2 = 1</code> <code class="notranslate">1 // 2 = 0</code> 这四次二分查找时出现的中间值 <code class="notranslate">mid</code> 就是所有成立的第一个输入</p>
 <p>也就是说 <code class="notranslate">7 0</code> <code class="notranslate">3 0</code> <code class="notranslate">1 0</code> <code class="notranslate">0 0</code> 都是正确答案</p>
-<h4>Phase 5</h4>
+<h2>Phase 5</h2>
 <div class="highlight highlight-source-assembly"><pre class="notranslate"><span class="pl-c1">0000000000401062</span><span class="pl-en"> &lt;phase_5&gt;:</span>
 <span class="pl-en">  # Part </span><span class="pl-c1">1</span>
 <span class="pl-en">  </span><span class="pl-c1">401062</span><span class="pl-en">:	</span><span class="pl-c1">53</span><span class="pl-en">                   	</span><span class="pl-k">push</span><span class="pl-en">   %</span><span class="pl-v">rbx</span>
@@ -646,7 +646,7 @@ GNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
 </tbody>
 </table></markdown-accessiblity-table>
 <p>所以正确答案的六个字符的 ASCII 码低四位应该依次为 <code class="notranslate">1001</code> <code class="notranslate">1111</code> <code class="notranslate">1110</code> <code class="notranslate">0101</code> <code class="notranslate">0110</code> <code class="notranslate">0111</code> ，比如 <code class="notranslate">ionefg</code> <code class="notranslate">yonuvw</code></p>
-<h4>Phase 6</h4>
+<h2>Phase 6</h2>
 <div class="highlight highlight-source-assembly"><pre class="notranslate"><span class="pl-en">00000000004010f4 &lt;phase_6&gt;:</span>
 <span class="pl-en">  # Part </span><span class="pl-c1">1</span>
 <span class="pl-en">  4010f4:	</span><span class="pl-c1">41</span><span class="pl-en"> </span><span class="pl-c1">56</span><span class="pl-en">                	</span><span class="pl-k">push</span><span class="pl-en">   %</span><span class="pl-v">r14</span>
@@ -833,7 +833,10 @@ GNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
 <span class="pl-en">  40119f:	b8 </span><span class="pl-c1">01</span><span class="pl-en"> </span><span class="pl-c1">00</span><span class="pl-en"> </span><span class="pl-c1">00</span><span class="pl-en"> </span><span class="pl-c1">00</span><span class="pl-en">       	</span><span class="pl-k">mov</span>    <span class="pl-c1">$</span><span class="pl-c1">0x1</span><span class="pl-s1">,</span><span class="pl-en">%</span><span class="pl-v">eax</span>
 <span class="pl-en">  4011a4:	ba d0 </span><span class="pl-c1">32</span><span class="pl-en"> </span><span class="pl-c1">60</span><span class="pl-en"> </span><span class="pl-c1">00</span><span class="pl-en">       	</span><span class="pl-k">mov</span>    <span class="pl-c1">$</span><span class="pl-c1">0x6032d0</span><span class="pl-s1">,</span><span class="pl-en">%</span><span class="pl-v">edx</span>
 <span class="pl-en">  4011a9:	eb cb                	</span><span class="pl-k">jmp</span><span class="pl-en">    </span><span class="pl-c1">401176</span><span class="pl-en"> &lt;phase_6</span><span class="pl-s1">+</span><span class="pl-c1">0x82</span><span class="pl-en">&gt;</span></pre></div>
-<p>这一段开始出现了很多的跳转操作，我们尝试模拟一遍程序运行的流程。这里有一个 Mermaid 图表可供流程参考（<del>本来想用横向的，结果太挤了，故改为竖向图</del>）：</p>
+<p>这一段开始出现了很多的跳转操作，我们尝试模拟一遍程序运行的流程。这里有一个 Mermaid 图表可供流程参考：</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<p>Gmeek 渲染似乎不会渲染 Mermaid 图，可以自己把代码复制到其他地方渲染</p>
+</div>
 <div class="highlight highlight-source-mermaid"><pre class="notranslate"><span class="pl-k">flowchart</span> <span class="pl-c1">TD</span>
     <span class="pl-ent">A</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-s"><span class="pl-pds">"</span>mov $0x0,%esi<span class="pl-pds">"</span></span><span class="pl-pds"><span class="pl-sg">]</span></span></span>
     <span class="pl-ent">A</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">C</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-s"><span class="pl-pds">"</span>mov (%rsp,%rsi,1),%ecx<span class="pl-pds">"</span></span><span class="pl-pds"><span class="pl-sg">]</span></span></span>
@@ -1122,7 +1125,7 @@ return 2*fun7;		// 2
 </code></pre>
 <p>所以该阶段的最终答案为 <code class="notranslate">20</code> 或 <code class="notranslate">22</code></p>
 <hr>
-<h3>Final Ans</h3>
+<h2>Final Ans</h2>
 <pre lang="ans" class="notranslate"><code class="notranslate">❯ ./bomb
 Welcome to my fiendish little bomb. You have 6 phases with
 which to blow yourself up. Have a nice day!

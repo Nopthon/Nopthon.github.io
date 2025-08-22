@@ -61,7 +61,7 @@ printf("Phase 1 defused. How about the next one?\n");
 > 网页对 Tab 的渲染不是很好，在 Github Issues 页面或许会有更好的阅读体验
 ---
 
-#### Phase 1
+## Phase 1
 
 ```assembly
 000000000400ee0 <phase_1>:
@@ -105,7 +105,7 @@ GNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
 > - **`U`**：单位大小（如字节、字、双字等）。
 > - **`<address>`**：内存地址（可以是寄存器、变量名或直接地址）。
 
-#### Phase 2
+## Phase 2
 
 ```assembly
 0000000000400efc <phase_2>:
@@ -195,7 +195,7 @@ for (int i = 1; i < 6; i++){
 
 由此可见，接下来的五个数字都要求每个数字是上一个数字的两倍，因此第二个答案是 `1 2 4 8 16 32` 
 
-#### Phase 3
+## Phase 3
 
 ```assembly
 0000000000400f43 <phase_3>:
@@ -349,7 +349,7 @@ for (int i = 1; i < 6; i++){
 
 在上面的组合中随意选择一项作为答案就可以拆除第三个炸弹，比如 `2 707` 
 
-#### Phase 4
+## Phase 4
 
 （减少了注释量）
 
@@ -476,7 +476,7 @@ int func4(int edi, int esi, int edx){								// 更加易读的：func4(int targ
 
 也就是说 `7 0` `3 0` `1 0` `0 0` 都是正确答案
 
-#### Phase 5
+## Phase 5
 
 ```assembly
 0000000000401062 <phase_5>:
@@ -623,7 +623,7 @@ int func4(int edi, int esi, int edx){								// 更加易读的：func4(int targ
 
 所以正确答案的六个字符的 ASCII 码低四位应该依次为 `1001` `1111` `1110` `0101` `0110` `0111` ，比如 `ionefg` `yonuvw` 
 
-#### Phase 6
+## Phase 6
 
 ```assembly
 00000000004010f4 <phase_6>:
@@ -854,7 +854,11 @@ void check_1_to_6_permutation(int nums[6]) {	// 是否满足 1~6 的排列
   4011a9:	eb cb                	jmp    401176 <phase_6+0x82>
 ```
 
-这一段开始出现了很多的跳转操作，我们尝试模拟一遍程序运行的流程。这里有一个 Mermaid 图表可供流程参考（~~本来想用横向的，结果太挤了，故改为竖向图~~）：
+这一段开始出现了很多的跳转操作，我们尝试模拟一遍程序运行的流程。这里有一个 Mermaid 图表可供流程参考：
+
+> [!note]
+> 
+> Gmeek 渲染似乎不会渲染 Mermaid 图，可以自己把代码复制到其他地方渲染
 
 ```mermaid
 flowchart TD
@@ -1232,7 +1236,7 @@ return 2*fun7;		// 2
 
 ---
 
-### Final Ans
+## Final Ans
 
 ```ans
 ❯ ./bomb
