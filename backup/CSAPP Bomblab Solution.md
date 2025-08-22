@@ -58,6 +58,7 @@ printf("Phase 1 defused. How about the next one?\n");
 
 > （题解中没有明显区分诸如 `%rbx` 和 `(%rbx)` 的写法，可能有一定混淆）
 
+> 网页对 Tab 的渲染不是很好，在 Github Issues 页面或许会有更好的阅读体验
 ---
 
 #### Phase 1
