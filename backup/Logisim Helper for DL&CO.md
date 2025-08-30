@@ -9,11 +9,13 @@
 >
 > 如果你在寻找完全入门教程，这里有一些帮助：
 >
-> [官方的 Guide（学会RTFM）](https://cburch.com/logisim/docs/2.7/en/html/guide/index.html)
->
+> [官方的 Guide](https://cburch.com/logisim/docs/2.7/en/html/guide/index.html) （学会R<font color="#a3a7a0">ead</font>T<font color="#a3a7a0">he</font>F<font color="#a3a7a0">riendly</font>M<font color="#a3a7a0">anual</font>）
+> 
 > [USTC 的 数字电路教程 - LogiSim 部分](https://vlab.ustc.edu.cn/guide/doc_logisim.html)
 >
-> 这门课不需要对 Logisim 有深入理解，不看任何教程纯摸索也是可以的
+> 直接 S<font color="#a3a7a0">earch</font>T<font color="#a3a7a0">he</font>F<font color="#a3a7a0">riendly</font>W<font color="#a3a7a0">ebsite</font> 也可以，问 AI 也可以
+>
+> >（实际上这门课不需要对 Logisim 有深入了解，不看任何教程纯摸索操作也是可以的）
 
 
 
