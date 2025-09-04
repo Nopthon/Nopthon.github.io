@@ -6,5 +6,6 @@
     "startSite":"05/29/2025",
     "themeMode":"manual",
     "dayTheme":"light",
-    "nightTheme":"dark_colorblind"
+    "nightTheme":"dark_colorblind",
+    "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>"
 }
