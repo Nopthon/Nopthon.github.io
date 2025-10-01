@@ -229,9 +229,9 @@ GNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
 <p>这里直接写出对应的 C 语言代码了，其中规定 <code class="notranslate">%rsp</code> 开始的六个数字组成数组 <code class="notranslate">stack[6]</code> ，<code class="notranslate">%rbx + 4</code> 表示 <code class="notranslate">i++</code></p>
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">for</span> (<span class="pl-smi">int</span> <span class="pl-s1">i</span> <span class="pl-c1">=</span> <span class="pl-c1">1</span>; <span class="pl-s1">i</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">6</span>; <span class="pl-s1">i</span><span class="pl-c1">++</span>){
 	<span class="pl-smi">int</span> <span class="pl-c1">EAX</span> <span class="pl-c1">=</span> <span class="pl-s1">stack</span>[<span class="pl-s1">i</span><span class="pl-c1">-</span><span class="pl-c1">1</span>];												<span class="pl-c">// EAX 为 “上一个数字”</span>
-	<span class="pl-c1">EAX</span> *= <span class="pl-c1">2</span>;														<span class="pl-c">// EAX 为 “上一个数字” 的两倍</span>
+	<span class="pl-c1">EAX</span> *= <span class="pl-c1">2</span>;															<span class="pl-c">// EAX 为 “上一个数字” 的两倍</span>
 	<span class="pl-k">if</span>(<span class="pl-s1">stack</span>[<span class="pl-s1">i</span>] <span class="pl-c1">-</span> <span class="pl-c1">EAX</span> <span class="pl-c1">==</span> <span class="pl-c1">0</span>){											<span class="pl-c">// ZF == 1 ?</span>
-	<span class="pl-k">continue</span>;														<span class="pl-c">// 跳过引爆炸弹的函数</span>
+	<span class="pl-k">continue</span>;															<span class="pl-c">// 跳过引爆炸弹的函数</span>
     }
     <span class="pl-en">explode_bomb</span>();
 }</pre></div>

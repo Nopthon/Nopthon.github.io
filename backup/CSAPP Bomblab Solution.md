@@ -185,9 +185,9 @@ GNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
 ```C
 for (int i = 1; i < 6; i++){
 	int EAX = stack[i-1];												// EAX 为 “上一个数字”
-	EAX *= 2;														// EAX 为 “上一个数字” 的两倍
+	EAX *= 2;															// EAX 为 “上一个数字” 的两倍
 	if(stack[i] - EAX == 0){											// ZF == 1 ?
-	continue;														// 跳过引爆炸弹的函数
+	continue;															// 跳过引爆炸弹的函数
     }
     explode_bomb();
 }
