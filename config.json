@@ -7,5 +7,6 @@
     "themeMode":"manual",
     "dayTheme":"light",
     "nightTheme":"dark_colorblind",
-    "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>"
+    "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>",
+    "style": "<style>pre, code, pre code {tab-size: 4 !important; -moz-tab-size: 4 !important;}</style>"
 }
