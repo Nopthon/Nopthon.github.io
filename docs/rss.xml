@@ -1,5 +1,46 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Nopthon's trashcan</title><link>https://Nopthon.github.io</link><description>一个存放各种各样不知道是什么内容的Trashcan🚮</description><copyright>Nopthon's trashcan</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://nopthon.github.io/burger.svg</url><title>avatar</title><link>https://Nopthon.github.io</link></image><lastBuildDate>Fri, 29 Aug 2025 05:04:52 +0000</lastBuildDate><managingEditor>Nopthon's trashcan</managingEditor><ttl>60</ttl><webMaster>Nopthon's trashcan</webMaster><item><title>CSAPP Bomblab Solution</title><link>https://Nopthon.github.io/post/CSAPP%20Bomblab%20Solution.html</link><description># Lab 2: Bomb Lab
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Nopthon's trashcan</title><link>https://Nopthon.github.io</link><description>一个存放各种各样不知道是什么内容的Trashcan🚮</description><copyright>Nopthon's trashcan</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://nopthon.github.io/burger.svg</url><title>avatar</title><link>https://Nopthon.github.io</link></image><lastBuildDate>Mon, 06 Oct 2025 16:07:32 +0000</lastBuildDate><managingEditor>Nopthon's trashcan</managingEditor><ttl>60</ttl><webMaster>Nopthon's trashcan</webMaster><item><title>TrinityCTF 2025 Writeup</title><link>https://Nopthon.github.io/post/TrinityCTF%202025%20Writeup.html</link><description>一个零 CTF 经验的大二老登参加了校内的面向新生的 CTF 比赛，
+
+这是他的 Writeup 发生的变化：
+
+~~AI 还是太好用了~~ ~~AI 写的都啥代码~~ 我错了
+
+---
+
+### Misc01-CTF_101
+
+&gt; 欢迎参赛TrinityCTF!
+&gt;
+&gt; 作为一名参赛选手你首先需要看看靶场, 看看公告, 确保了解比赛规则详情!
+&gt;
+&gt; 善用互联网和工具, 希望你能在这场比赛中学习, 练习; 或是切身感受下CTF赛事的氛围与挑战
+&gt;
+&gt; 如果你发现你不会的还挺多, ~~那就对了~~ 我们每一名队员都是这么成长起来的, 赛后我们也会组织WP讲解, 欢迎来听 如果你发现你都会, 啊那太好了. 请在这场比赛尽情杀题~~然后大佬带飞我们战队把😆~~
+&gt;
+&gt; 最后祝各位解题顺利.
+
+然后就要填 Flag 了，注意到在几天前发布的 TrinityCTF 2025 coming 赛事预告中有：
+
+&gt; 最后祝大家参赛愉快~~ZmxhZ3toNHBweV9oNGNrMW41IX0=~~取得好成绩
+
+Base64 一下被划线的乱码得到 `flag{h4ppy_h4ck1n5!}`
+
+
+
+### Misc02-搜打撤
+
+提供了一个 py 文件和摩斯电码本，py 文件运行后是一个文字冒险游戏，在游玩过程中可以获得flag碎片，实际上可以直接翻 py 文件：
+
+```python
+WORK_SECRET = os.getenv('WORK_SECRET', 'dzBySw==')					# Base64: w0rK
+COMBINE_SECRET = os.getenv('COMBINE_SECRET', 'YzBtYkluZSBhbDE=')	# Base64: c0mbIne al1
+PASSWORD1 = os.getenv('PASSWORD1', 'TkpVZXI=')						# Base64: NJUer
+PASSWORD2 = os.getenv('PASSWORD2', 'UEtVZXI=')						# Base64: PKUer
+FLAG_SECRET = os.getenv('FLAG_SECRET', 'ZmxhZw==')					# Base64: flag
+# 省略一部分内容...
+def exit_gate():
+    '''校门撤离点'''
+    print('祝贺你得到了想要的东西。</description><guid isPermaLink="true">https://Nopthon.github.io/post/TrinityCTF%202025%20Writeup.html</guid><pubDate>Mon, 06 Oct 2025 15:59:26 +0000</pubDate></item><item><title>CSAPP Bomblab Solution</title><link>https://Nopthon.github.io/post/CSAPP%20Bomblab%20Solution.html</link><description># Lab 2: Bomb Lab
 
 二进制炸弹 `Bomb` 是一个由多个阶段组成的程序，每个阶段会要求用户在 `stdin` 输入特定字符串。</description><guid isPermaLink="true">https://Nopthon.github.io/post/CSAPP%20Bomblab%20Solution.html</guid><pubDate>Fri, 22 Aug 2025 06:33:04 +0000</pubDate></item><item><title>CSAPP Datalab Solution</title><link>https://Nopthon.github.io/post/CSAPP%20Datalab%20Solution.html</link><description># Lab 1: Data Lab
 
