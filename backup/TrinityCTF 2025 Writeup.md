@@ -713,7 +713,7 @@ Flag 就是 `flag{15F00E032036724774CF4A2D2CA7C63C}`
 
 注意到提示：
 
-> 你可能需要了解一下 [[TLS（线程本地存储）](https://learn.microsoft.com/zh-cn/windows/win32/procthread/using-thread-local-storage)](https://learn.microsoft.com/zh-cn/windows/win32/procthread/using-thread-local-storage) 和 [[IsDebuggerPresent](https://learn.microsoft.com/zh-cn/windows/win32/api/debugapi/nf-debugapi-isdebuggerpresent)](https://learn.microsoft.com/zh-cn/windows/win32/api/debugapi/nf-debugapi-isdebuggerpresent)
+> 你可能需要了解一下 [[TLS（线程本地存储）](https://learn.microsoft.com/zh-cn/windows/win32/procthread/using-thread-local-storage)] 和 [[IsDebuggerPresent](https://learn.microsoft.com/zh-cn/windows/win32/api/debugapi/nf-debugapi-isdebuggerpresent)]
 
 似乎是对动态调试操作有所反制，所以依旧尝试 Ghidra 静态分析。先搜索一下字符串：
 
