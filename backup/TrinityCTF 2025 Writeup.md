@@ -695,7 +695,7 @@ print(f"code: {code}")
 
 拿到激活码 `15F00E032036724774CF4A2D2CA7C63C`
 
-![image-20251006185600169](images/image-20251006185600169.png)
+![image-20251006185600169](https://nopthon.github.io/image-20251006185600169.png)
 
 Flag 就是 `flag{15F00E032036724774CF4A2D2CA7C63C}`
 
