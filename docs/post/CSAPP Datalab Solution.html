@@ -336,7 +336,7 @@ pre, code, pre code {
 <p>​	我们知道最大的二进制补码整数是 <code class="notranslate">01111111 11111111 11111111 11111111</code> ，这个数有一个特性： <code class="notranslate">+1</code> 操作与取反操作得到相同的值。</p>
 <p>​	总共有两个数符合这样的特性： <code class="notranslate">Tmax</code> 与 <code class="notranslate">-1</code> ，所以我们先通过 <code class="notranslate">!( (x+1) ^ (~x) )</code> 排除掉其他值，再通过 <code class="notranslate">!(!(~x))</code> 操作排除 <code class="notranslate">-1</code> 这个值（只有 <code class="notranslate">-1</code> 取反后为 <code class="notranslate">0</code>）</p>
 <p>​	当然，直接构造出 <code class="notranslate">0x80000000</code>，利用异或性质得到答案是更加简洁的选择，但是<strong>第一个函数不依赖 <code class="notranslate">int</code> 在不同环境下的位数限制，具有更好的可移植性</strong>；而第二个函数的 <code class="notranslate">0x80&lt;&lt;24</code> 操作只针对于 32 位 <code class="notranslate">int</code> （并且这一题禁止了移位操作，所以后者得不到分）</p>
-<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
 <p><code class="notranslate">!</code> 的关键之处在于，它可以将所有非零数统一设置为 0，在没有 <code class="notranslate">if</code> <code class="notranslate">==</code> 操作的情况下，这很实用</p>
 <p><strong>判断 <code class="notranslate">a</code>,<code class="notranslate">b</code> 是否相等的一个简单操作是： <code class="notranslate">!(a^b)</code> ，相等值为 <code class="notranslate">1</code>，否则值为 <code class="notranslate">0</code></strong></p>
 </div>
@@ -364,7 +364,7 @@ pre, code, pre code {
 </li>
 </ol>
 <p>​	对于补码数，取负操作等价为 “按位取反 + 1” ，据此给出解答</p>
-<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
 <p>取负操作 <code class="notranslate">-x</code> 的定义是使 <code class="notranslate">x+(-x)</code> 在模 $2^n$ 运算下为 0，$n$ 是数据长度</p>
 <p>不难得到 $x+(\sim x + 1) = 2^n \equiv 0 \pmod {2^n}$</p>
 </div>
@@ -408,7 +408,7 @@ pre, code, pre code {
 <p>​	如果 <code class="notranslate">x &lt;= y</code> 返回 <code class="notranslate">1</code>，否则返回 <code class="notranslate">0</code></p>
 <p>​	容易发现： <code class="notranslate">x &lt;= y</code> 有两种情况：<code class="notranslate">x</code> 负 <code class="notranslate">y</code> 非负；或者 <code class="notranslate">x</code> <code class="notranslate">y</code> 同正负且满足 <code class="notranslate">y-x</code> 符号位为 <code class="notranslate">0</code></p>
 <p>​		<code class="notranslate">return ( (x,y 同号) &amp; !((y-x) &gt;&gt; 31) ) | (x负且y非负)</code></p>
-<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
 <p>为什么要加上对 <code class="notranslate">x</code> <code class="notranslate">y</code> 符号的讨论？</p>
 <p>防止溢出情况改变了符号位</p>
 <p><del>另外我写不出来可移植性好的函数（能同时适用于 32 位和 64 位的函数）</del></p>
@@ -425,7 +425,7 @@ pre, code, pre code {
 </ol>
 <p>​	<code class="notranslate">!</code> 的运算解释：如果 <code class="notranslate">x</code> 非零，则 <code class="notranslate">!x = 0</code>，否则 <code class="notranslate">x == 0 → !x = 1</code></p>
 <p>​	注意到对于任意非零数 <code class="notranslate">x</code> ，<code class="notranslate">x</code> 与 <code class="notranslate">-x</code> 总有一个符号位为 <code class="notranslate">1</code>，而 <code class="notranslate">x == 0</code> 时 <code class="notranslate">x == -x == 0</code>，符号位为 <code class="notranslate">0</code> ，根据这个符号位差异就可以写出函数</p>
-<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
 <p><strong>C 语言对于有符号数采用算术右移，所以 <code class="notranslate">x != 0</code> 时右移 31 位结果为 <code class="notranslate">-1</code></strong></p>
 </div>
 <p>​	code:</p>
@@ -493,7 +493,7 @@ pre, code, pre code {
 <div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-s1">check</span> <span class="pl-c1">=</span> !!(<span class="pl-s1">x</span> <span class="pl-c1">&amp;</span> <span class="pl-c1">0xffff0000</span>);		<span class="pl-c">// 高 16 位全零时值为 0，否则值为 1；</span>
 <span class="pl-s1">Max</span> <span class="pl-c1">=</span> <span class="pl-s1">Max</span> <span class="pl-c1">+</span> (<span class="pl-s1">check</span> &lt;&lt; <span class="pl-c1">4</span>);			<span class="pl-c">// 将 0 1 映射到了 0 16，这恰好满足对 Max 的增加情况</span>
 <span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> &gt;&gt; (<span class="pl-s1">check</span> &lt;&lt; <span class="pl-c1">4</span>);				<span class="pl-c">// 如果高 16 位不为 0，那就把高 16 位移到低 16 位的位置，否则不改变 x 的值</span></pre></div>
-<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
 <p>为什么要这么移动 <code class="notranslate">x</code> ？</p>
 <p>这几次查找用到的掩码值分别为 <code class="notranslate">0xffff0000</code> <code class="notranslate">0x0000ff00</code> <code class="notranslate">0x000000f0</code> <code class="notranslate">0b1100</code> <code class="notranslate">0b10</code> ，你可以从掩码的构造发现移位的目的</p>
 </div>
@@ -526,7 +526,7 @@ pre, code, pre code {
 }</pre></div>
 <br>
 <p><em>（接下来的三道题放开了 <code class="notranslate">if</code> <code class="notranslate">while</code> 控制语句，<code class="notranslate">||</code> <code class="notranslate">&amp;&amp;</code> <code class="notranslate">==</code> 的使用）</em></p>
-<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
 <p>IEEE 754 标准的单精度浮点数：1bit 符号位 + 8bits 指数位 + 23bits 尾数位</p>
 </div>
 <br>
@@ -643,7 +643,7 @@ $$</p>
 <span class="pl-s1">Score</span> <span class="pl-c1">=</span> <span class="pl-c1">62</span>/<span class="pl-c1">62</span> [<span class="pl-c1">36</span>/<span class="pl-c1">36</span> <span class="pl-s1">Corr</span> <span class="pl-c1">+</span> <span class="pl-c1">26</span>/<span class="pl-c1">26</span> <span class="pl-s1">Perf</span>] (<span class="pl-c1">148</span> <span class="pl-s1">total</span> <span class="pl-s1">operators</span>)</pre></div>
 <br>
 <p>附：实验相关说明</p>
-<div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p>
+<div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p>
 <h4>评分工具</h4>
 <p><strong>btest</strong>：检查 <code class="notranslate">bits.c</code> 中函数的正确性。</p>
 <p><strong>dlc</strong>：检查代码是否符合规则。</p>
