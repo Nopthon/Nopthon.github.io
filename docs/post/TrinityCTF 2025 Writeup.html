@@ -618,7 +618,7 @@ nVar5 = ngx_http_arg(r,password,uVar16,&amp;arg_value);				<span class="pl-c"><s
     _Var2 = <span class="pl-c1">fork</span>();
     <span class="pl-k">if</span> (_Var2 == <span class="pl-c1">0</span>) {
         <span class="pl-c"><span class="pl-c">//</span> 子进程执行</span>
-        iVar3 = <span class="pl-c1">getrlimit64</span>(RLIMIT_NOFILE,(rlimit64 *)&amp;rlim);
+        iVar3 = <span class="pl-c1">getrlimit64</span>(<span class="pl-c1">RLIMIT_NOFILE</span>,(rlimit64 *)&amp;rlim);
         <span class="pl-c"><span class="pl-c">//</span> 关闭所有文件描述符</span>
         <span class="pl-k">for</span> (; __fd &lt; iVar18; __fd = __fd + <span class="pl-c1">1</span>) {
             <span class="pl-c1">close</span>(__fd);
@@ -678,7 +678,7 @@ local_128.m_data = <span class="pl-s"><span class="pl-pds">"</span>^[_a-zA-Z][_0
     iVar4 = <span class="pl-c1">QtPrivate::compareMemory</span>(&amp;local_128,&amp;local_148);	<span class="pl-c"><span class="pl-c">//</span> compareMemory</span>
     <span class="pl-k">if</span> (iVar4 == <span class="pl-c1">0</span>) {
         pQVar5 = *(QString **)(<span class="pl-c1">this</span>-&gt;<span class="pl-smi">ui</span> + <span class="pl-c1">0x58</span>);
-        <span class="pl-c1">QString::QString</span>((QString *)&amp;local_68,(QChar *)&amp;DAT_140006196,<span class="pl-c1">4</span>); <span class="pl-c"><span class="pl-c">//</span> "成功"</span>
+        <span class="pl-c1">QString::QString</span>((QString *)&amp;local_68,(QChar *)&amp;<span class="pl-c1">DAT_140006196</span>,<span class="pl-c1">4</span>); <span class="pl-c"><span class="pl-c">//</span> "成功"</span>
         <span class="pl-c1">QLabel::setText</span>(pQVar5);
         <span class="pl-c1">this</span>-&gt;<span class="pl-smi">activated</span> = <span class="pl-c1">true</span>;
     } <span class="pl-k">else</span> {
@@ -724,17 +724,17 @@ local_128.m_data = <span class="pl-s"><span class="pl-pds">"</span>^[_a-zA-Z][_0
 <div class="highlight highlight-source-c++"><pre class="notranslate"><span class="pl-k">void</span> __fastcall <span class="pl-en">FUN_00401450</span>(undefined4 param_1,<span class="pl-k">int</span> *param_2)
 
 {
-  HANDLE hHandle;
+  <span class="pl-c1">HANDLE</span> hHandle;
   uint uVar1;
   <span class="pl-k">int</span> iVar2;
   <span class="pl-k">int</span> iVar3;
-  HANDLE unaff_EDI;
+  <span class="pl-c1">HANDLE</span> unaff_EDI;
   uint uStack_54;
   <span class="pl-k">int</span> iStack_4c;
-  DWORD DStack_48;
+  <span class="pl-c1">DWORD</span> DStack_48;
   uint auStack_40 [<span class="pl-c1">15</span>];
   
-  auStack_40[<span class="pl-c1">0xe</span>] = DAT_00404000 ^ (uint)&amp;stack0xfffffffc;
+  auStack_40[<span class="pl-c1">0xe</span>] = <span class="pl-c1">DAT_00404000</span> ^ (uint)&amp;stack0xfffffffc;
   <span class="pl-c1">FUN_004013b0</span>();
                     <span class="pl-c"><span class="pl-c">/*</span> WARNING: Bad instruction - Truncating control flow here <span class="pl-c">*/</span></span>
   <span class="pl-c1">Sleep</span>(<span class="pl-c1">1000</span>);
@@ -753,13 +753,13 @@ local_128.m_data = <span class="pl-s"><span class="pl-pds">"</span>^[_a-zA-Z][_0
   auStack_40[<span class="pl-c1">0xc</span>] = <span class="pl-c1">0x6e7aeeb0</span>;
   auStack_40[<span class="pl-c1">0xd</span>] = <span class="pl-c1">0x34</span>;
   <span class="pl-c1">FUN_00401020</span>(<span class="pl-s"><span class="pl-pds">"</span>welcome to TrinityCTF<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>);
-  hHandle = (HANDLE)<span class="pl-c1">FUN_004013b0</span>();
+  hHandle = (<span class="pl-c1">HANDLE</span>)<span class="pl-c1">FUN_004013b0</span>();
   <span class="pl-c1">Sleep</span>(<span class="pl-c1">1000</span>);
   uVar1 = <span class="pl-c1">func_0x00401080</span>();
   <span class="pl-c1">srand</span>(uVar1);
   iVar2 = <span class="pl-c1">rand</span>();
   <span class="pl-c1">FUN_00401020</span>(<span class="pl-s"><span class="pl-pds">"</span>input your lucky number:<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>);
-  iVar3 = <span class="pl-c1">FUN_00401050</span>(&amp;UNK_00403174);
+  iVar3 = <span class="pl-c1">FUN_00401050</span>(&amp;<span class="pl-c1">UNK_00403174</span>);
   <span class="pl-k">if</span> (iVar3 != <span class="pl-c1">1</span>) {
     <span class="pl-c1">FUN_00401020</span>(<span class="pl-s"><span class="pl-pds">"</span>invalid input<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>);
     <span class="pl-c1">WaitForSingleObject</span>(hHandle,<span class="pl-c1">0xffffffff</span>);
